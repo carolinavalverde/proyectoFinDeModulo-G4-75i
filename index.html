@@ -24,9 +24,12 @@
   <body>
     <header></header>
     <main class="mainFondo">
-         <!-- pelicula destacada -->
-      <div class="contenedorPrincipal">
-        <img src="./img/imagenPeliDestacadaBatman.jpg" alt="the batman pelicula" />
+      <!-- pelicula destacada -->
+      <section class="contenedorPrincipal">
+        <img
+          src="./img/imagenPeliDestacadaBatman.jpg"
+          alt="the batman pelicula"
+        />
         <div class="textoContenedorPrincipal">
           <div>
             <h1 class="mb-3">The Batman</h1>
@@ -45,8 +48,146 @@
             >
           </div>
         </div>
-      </div>
-
+      </section>
+      <!-- seccion accion -->
+      <section class="container my-3">
+        <h3 class="tituloCategoria">Acción</h3>
+        <div id="carouselPeliculasAccion" class="carousel slide my-2">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselPeliculasAccion"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselPeliculasAccion"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex row justify-content-center my-3">
+                <div class="col-2 mb-3">
+                  <a href="./pages/error.html" class="card h-100 shadow">
+                    <div>
+                      <img
+                        src="./img/avengersPP.jpg"
+                        class="card-img-top img-fluid"
+                        alt="pelicula avengers"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="col-2 mb-3">
+                  <a href="./pages/error.html" class="card h-100 shadow">
+                    <div>
+                      <img
+                        src="./img/capitanaMarvelPP.jpg"
+                        class="card-img-top img-fluid"
+                        alt="pelicula capitana marvel"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="col-2 mb-3">
+                  <a href="./pages/error.html" class="card h-100 shadow">
+                    <div>
+                      <img
+                        src="./img/ironmanPP.jpg"
+                        class="card-img-top img-fluid"
+                        alt="pelicula ironman"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="col-2 mb-3">
+                  <a href="./pages/error.html" class="card h-100 shadow">
+                    <div>
+                      <img
+                        src="./img/guardianesGalaxiaPP.jpg"
+                        class="card-img-top img-fluid"
+                        alt="pelicula guardianes de la galaxia"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex row justify-content-center my-3">
+                  <div class="col-2 mb-3">
+                    <a href="./pages/error.html" class="card h-100 shadow">
+                      <div>
+                        <img
+                          src="./img/hulkPP.jpg"
+                          class="card-img-top img-fluid"
+                          alt="pelicula hulk"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-2 mb-3">
+                    <a href="./pages/error.html" class="card h-100 shadow">
+                      <div>
+                        <img
+                          src="./img/antManPP.jpg"
+                          class="card-img-top img-fluid"
+                          alt="pelicula antman"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-2 mb-3">
+                    <a href="./pages/error.html" class="card h-100 shadow">
+                      <div>
+                        <img
+                          src="./img/civilWarPP.jpg"
+                          class="card-img-top img-fluid"
+                          alt="pelicula civilwar"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-2 mb-3">
+                    <a href="./pages/error.html" class="card h-100 shadow">
+                      <div>
+                        <img
+                          src="./img/capitanAmericaPP.jpg"
+                          class="card-img-top img-fluid"
+                          alt="pelicula capitan america"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+           
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselPeliculasAccion"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselPeliculasAccion"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <script src="./js/bootstrap.min.js"></script>
