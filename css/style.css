@@ -1,0 +1,30 @@
+/* texto titulos */
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap");
+/* texto parrafos */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #9eadcf;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.mainFondo {
+  background-image: url(../img/universeBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* pagina error */
+.textoPaginaError{
+  color: #9eadcf;
+  font-family: ;
+  font-size: ;
+}
