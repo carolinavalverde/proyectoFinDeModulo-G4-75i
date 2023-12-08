@@ -23,8 +23,8 @@ main {
 }
 
 /* pagina error */
-.textoPaginaError{
+.textoPaginaError {
   color: #9eadcf;
-  font-family: ;
-  font-size: ;
+  font-size: 2.5em;
+  font-family: "Titillium Web", sans-serif;
 }
