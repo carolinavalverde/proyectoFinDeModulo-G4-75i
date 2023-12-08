@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Univ3rse Movies" />
+    <meta
+      name="keywords"
+      content="Univ3rseMovies, Univ3rse, Movies, streaming"
+    />
+    <meta name="author" content="Team4" />
+    <title>Univ3rse Movies</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark navEstilo">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <span class="navLogo">UNIV3RSE MOVIES</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link navTitulos"
+                  aria-current="page"
+                  href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link navTitulos"
+                  aria-current="page"
+                  href="../pages/contacto.html"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link navTitulos"
+                  aria-current="page"
+                  href="../pages/nosotros.html"
+                  >Acerca de</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navTitulos" href="../pages/registro.html"
+                  >Crear cuenta</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navTitulos active" href="../pages/login.html"
+                  >Iniciar sesión</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                id="busquedaPelicula"
+                type="search"
+                placeholder="Buscar película"
+                aria-label="busquedaPelicula"
+              />
+              <button type="button" class="btn btn-outline-light">
+                <i class="fa-solid fa-magnifying-glass fa-xl iRosaclaro"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mainFondo">
+        <!-- form login -->
+      <section class="container">
+        <h1 class="text-center py-4 tituloPaginaregistro">INICIAR SESIÓN</h1>
+        <div class="row">
+          <div class="mt-5 col-lg-6 col-sm-12">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <form>
+                  <div class="mb-3">
+                    <label for="email" class="form-label iBordo"
+                      >Correo Electrónico</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control formLogin"
+                      id="email"
+                      placeholder="nombre@ejemplo.com"
+                      minlength="5"
+                      maxlength="100"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label iBordo"
+                      >Contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control formLogin"
+                      id="password"
+                      placeholder="Escribe tu contraseña"
+                      minlength="8"
+                      maxlength="15"
+                      required
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <span class="iBordo">o Ingresa con:</span>
+                    <a
+                      class="mx-11 iBordo linkRedesLogin"
+                      href="../pages/error-404.html"
+                    >
+                      <i class="fa-brands fa-google fa-xl"></i>
+                    </a>
+                    <a
+                      class="mx-11 iBordo linkRedesLogin"
+                      href="../pages/error-404.html"
+                    >
+                      <i class="fa-brands fa-facebook fa-xl"></i>
+                    </a>
+                    <a
+                      class="mx-11 iBordo linkRedesLogin"
+                      href="../pages/error-404.html"
+                    >
+                      <i class="fa-brands fa-instagram fa-xl"></i>
+                    </a>
+                  </div>
+                  <div class="mb-3">
+                    <a href="../pages/error-404.html" class="iBordo"
+                      >¿Olvidaste tu contraseña?</a
+                    >
+                  </div>
+                  <div class="my-3 d-flex flex-column text-center">
+                    <button
+                      type="submit"
+                      class="btn botonPrincipal botonPrincipalhover"
+                    >
+                      Iniciar Sesión
+                    </button>
+                  </div>
+                  <div class="my-3 d-flex flex-column text-center">
+                    <span>¿No tenes cuenta?</span>
+                    <button
+                      type="submit"
+                      class="btn botonPrincipal botonPrincipalhover"
+                    >
+                      <a class="aLogin" href="../pages/registro.html">
+                        Crear cuenta
+                      </a>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Imagen de Login -->
+          <section class="col-lg-6 col-sm-12 mb-4 dNoneindex dNonelogin">
+            <img
+              class="img-fluid rounded w-100 h-100 d-xs-none"
+              src="../img/imagenLogin.gif"
+              alt="imagen de login"
+            />
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="py-3 py-4 footerEstilo">
+        <div class="container text-center text-md-start">
+          <div class="row">
+            <div class="col-8 text-center">
+              <p class="footerTitulos">&copy; Todos los derechos reservados</p>
+            </div>
+            <div class="col-4 d-flex justify-content-end footerTitulos">
+              <ul class="list-unstyled">
+                <div>
+                  <a href="../pages/error.html"
+                    ><i class="bi bi-instagram fs-4 iRosaclaro linkFooter"></i
+                  ></a>
+                  <a href="../pages/error.html" class="mx-2"
+                    ><i class="bi bi-facebook fs-4 iRosaclaro linkFooter"></i
+                  ></a>
+                  <a href="../pages/error.html"
+                    ><i class="bi bi-twitter fs-4 iRosaclaro linkFooter"></i>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/....js"></script>
+    </body>
+  </html>
