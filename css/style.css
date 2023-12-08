@@ -148,6 +148,19 @@ img {
   width: 120%;
 }
 
+.botonSecundarioPaginaPrincipal {
+  font-size: 1.2em;
+  font-family: "Titillium Web", sans-serif;
+  color: #9eadcf;
+  transition: background-color 0.3s ease;
+}
+
+.botonSecundarioPaginaPrincipal:hover {
+  color: #9eadcf;
+  border: #072f8e solid 2px;
+  border-radius: 42%;
+}
+
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
@@ -173,6 +186,10 @@ img {
 
   .carouselSm {
     display: none;
+  }
+
+  .categoriaSm {
+    font-size: 0.7em;
   }
 }
 /* dispositivos medianos */
