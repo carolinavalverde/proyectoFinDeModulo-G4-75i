@@ -1,4 +1,4 @@
-/* texto tittulos */
+/* texto titulos */
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap");
 /* texto parrafos */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
@@ -170,12 +170,12 @@ img {
     padding: 5px;
     font-size: 0.4em;
   }
-  .carousel-item img {
-    width: 80px;
-    height: 80px;
-  }
-}
 
+  /* .carousel-item img {
+    width: 80px;
+    height: 50px;
+  } */
+}
 /* dispositivos medianos */
 @media screen and (min-width: 576px) and (max-width: 820px) {
   .textoContenedorPrincipal h1 {
@@ -184,5 +184,10 @@ img {
 
   .textoContenedorPrincipal p {
     font-size: 1em;
+  }
+
+  .botonPrincipal {
+    padding: 8px;
+    font-size: 0.7em;
   }
 }
