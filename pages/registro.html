@@ -22,9 +22,250 @@
     />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navEstilo">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+              <span class="navLogo">UNIV3RSE MOVIES</span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link navTitulos"
+                    aria-current="page"
+                    href="../index.html"
+                    >Inicio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link navTitulos"
+                    aria-current="page"
+                    href="../pages/contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link navTitulos"
+                    aria-current="page"
+                    href="../pages/nosotros.html"
+                    >Acerca de</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navTitulos active" href="../pages/registro.html"
+                    >Crear cuenta</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navTitulos" href="../pages/login.html"
+                    >Iniciar sesión</a
+                  >
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  id="busquedaPelicula"
+                  type="search"
+                  placeholder="Buscar película"
+                  aria-label="busquedaPelicula"
+                />
+                <button type="button" class="btn btn-outline-light">
+                  <i class="fa-solid fa-magnifying-glass fa-xl iRosaclaro"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="mainFondo">
+          <!-- Registro form -->
+        <section class="container">
+          <h1 class="tituloPaginaregistro text-center mt-3">CREAR CUENTA</h1>
+          <div class="d-flex m-auto col-lg-8 col-md-10 col-sm-10">
+            <form class="textoPaginaregistro">
+              <div class="m-2">
+                <label for="nombreApellido" class="form-label formRegistro"
+                  >Nombre y Apellido:</label
+                >
+                <input
+                  type="text"
+                  class="form-control inputFormulario"
+                  id="nombreApellido"
+                  placeholder="Ej: Ana Perez"
+                  minlength="5"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="nombreUsuario" class="form-label formRegistro"
+                  >Nombre de Usuario:</label
+                >
+                <input
+                  type="text"
+                  class="form-control inputFormulario"
+                  id="nombreUsuario"
+                  placeholder="Ej: anitaperez"
+                  minlength="6"
+                  maxlength="30"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="email" class="form-label formRegistro">Email:</label>
+                <input
+                  type="email"
+                  class="form-control inputFormulario"
+                  id="email"
+                  placeholder="Ej: anaperez@hotmail.com"
+                  minlength="5"
+                  maxlength="100"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="telefono" class="form-label formRegistro"
+                  >Teléfono:</label
+                >
+                <input
+                  type="number"
+                  class="form-control inputFormulario"
+                  id="telefono"
+                  placeholder="Ej: 3815645887"
+                  minlength="6"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="domicilio" class="form-label formRegistro"
+                  >Domicilio:</label
+                >
+                <input
+                  type="text"
+                  class="form-control inputFormulario"
+                  id="domicilio"
+                  placeholder="Ej: Buenos Aires 120"
+                  minlength="6"
+                  maxlength="30"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="ciudad" class="form-label formRegistro"
+                  >Localidad:</label
+                >
+                <input
+                  type="text"
+                  class="form-control inputFormulario"
+                  id="ciudad"
+                  placeholder="Ej: Yerba Buena"
+                  minlength="6"
+                  maxlength="25"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="codigoPostal" class="form-label formRegistro"
+                  >Código Postal:</label
+                >
+                <input
+                  type="number"
+                  class="form-control inputFormulario"
+                  id="codigoPostal"
+                  placeholder="Ej: 4101"
+                  minlength="3"
+                  maxlength="4"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="contraseña" class="form-label formRegistro"
+                  >Contraseña:</label
+                >
+                <input
+                  type="password"
+                  class="form-control inputFormulario"
+                  id="contraseña"
+                  placeholder="Escribe tu contraseña"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
+              </div>
+              <div class="m-2">
+                <label for="confirmarContraseña" class="form-label formRegistro"
+                  >Confirmar contraseña:</label
+                >
+                <input
+                  type="password"
+                  id="confirmarContraseña"
+                  class="form-control inputFormulario"
+                  placeholder="Confirmá tu contraseña"
+                  aria-describedby="contraseña"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
+              </div>
+              <div class="form-text mx-4">
+                <p class="iBordo">
+                  Su contraseña debe tener 8-20 caracteres, contener letras y
+                  números, y no debe contener espacios, caracteres especiales o
+                  emoji.
+                </p>
+              </div>
+              <div class="container d-flex justify-content-center">
+                <button
+                type="submit"
+                class="btn botonPrincipal botonPrincipalhover "
+              >
+                Regístrate
+              </button>
+              </div>      
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer class="py-3 py-4 footerEstilo">
+          <div class="container text-center text-md-start">
+            <div class="row">
+              <div class="col-8 text-center">
+                <p class="footerTitulos">&copy; Todos los derechos reservados</p>
+              </div>
+              <div class="col-4 d-flex justify-content-end footerTitulos">
+                <ul class="list-unstyled">
+                  <div>
+                    <a href="../pages/error.html"
+                      ><i class="bi bi-instagram fs-4 iRosaclaro linkFooter"></i
+                    ></a>
+                    <a href="../pages/error.html" class="mx-2"
+                      ><i class="bi bi-facebook fs-4 iRosaclaro linkFooter"></i
+                    ></a>
+                    <a href="../pages/error.html"
+                      ><i class="bi bi-twitter fs-4 iRosaclaro linkFooter"></i>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
     <script src="../js/bootstrap.min.js"></script>
       <script src="../js/....js"></script>
   </body>
