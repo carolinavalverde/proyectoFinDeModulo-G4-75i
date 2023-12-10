@@ -1,6 +1,6 @@
 class Usuario {
     #id;
-    #estatusUsuario;
+    #administrador;
     #nombreApellido;
     #nombreUsuario;
     #email;
@@ -10,9 +10,9 @@ class Usuario {
     #codigoPostal;
     #contraseña;
   
-    constructor(estatusUsuario, nombreApellido, nombreUsuario, email, telefono, domicilio, localidad, codigoPostal, contraseña) {
+    constructor(administrador = false, nombreApellido, nombreUsuario, email, telefono, domicilio, localidad, codigoPostal, contraseña) {
       this.#id = crypto.randomUUID();
-      this.#estatusUsuario = estatusUsuario;
+      this.#administrador = administrador;
       this.#nombreApellido = nombreApellido;
       this.#nombreUsuario = nombreUsuario;
       this.#email = email;
@@ -28,8 +28,8 @@ class Usuario {
       return this.#id;
     }
   
-    getEstatusUsuario() {
-      return this.#estatusUsuario;
+    getAdministrador() {
+      return this.#administrador;
     }
   
     getNombreApellido() {
@@ -66,8 +66,8 @@ class Usuario {
   
     // Métodos setter
   
-    setEstatusUsuario(estatusUsuario) {
-      this.#estatusUsuario = estatusUsuario;
+    setAdministrador(administrador) {
+      this.#administrador = administrador;
     }
   
     setNombreApellido(nombreApellido) {
