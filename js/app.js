@@ -16,6 +16,7 @@ function usuarioRepetido(nomUsuario){
     }
     return false;
 }
+
 function mensajeDeError(contrasena, usuario){
     if (!contrasena) {
         alert('No existe paridad entre la contraseña y la confirmacion de la misma, vuelve a intentarlo.');
@@ -27,6 +28,7 @@ function mensajeDeError(contrasena, usuario){
 
 const formularioDeRegistro = document.querySelectorAll("form");
 const usuarios = [];
+
 const crearUsuario = (e) => {
   e.preventDefault(); 
 
@@ -53,9 +55,12 @@ const crearUsuario = (e) => {
         contrasena
       );
       usuarios.push(nuevoUsuario);
+      formularioDeRegistro[1].reset();
   } else {
     mensajeDeError(contraCorrecta(contrasena, confirContrasena),usuarioRepetido(nombreUsuario));
   }
+  console.log(usuarios);
+  console.log(usuarios.length-1);
 };
 
 formularioDeRegistro[1].addEventListener("submit", crearUsuario);
