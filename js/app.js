@@ -26,6 +26,10 @@ function mensajeDeError(contrasena, usuario){
     }
 }
 
+function guardarEnLocalStorage(){
+    localStorage.setItem('usuariosKey', JSON.stringify(usuarios));
+}
+
 const formularioDeRegistro = document.querySelectorAll("form");
 const usuarios = [];
 
@@ -56,11 +60,12 @@ const crearUsuario = (e) => {
       );
       usuarios.push(nuevoUsuario);
       formularioDeRegistro[1].reset();
+      guardarEnLocalStorage();
+      //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio 
   } else {
     mensajeDeError(contraCorrecta(contrasena, confirContrasena),usuarioRepetido(nombreUsuario));
   }
-  console.log(usuarios);
-  console.log(usuarios.length-1);
+ 
 };
 
 formularioDeRegistro[1].addEventListener("submit", crearUsuario);

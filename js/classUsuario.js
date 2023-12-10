@@ -108,4 +108,19 @@ export default class Usuario {
   set contraseña(contraseña) {
     this.#contraseña = contraseña;
   }
+
+  toJSON() {
+    return {
+      id: this.id,
+      administrador: this.administrador,
+      nombreApellido: this.nombreApellido,
+      nombreUsuario: this.nombreUsuario,
+      email: this.email,
+      telefono: this.telefono,
+      domicilio: this.domicilio,
+      localidad: this.localidad,
+      codigoPostal: this.codigoPostal,
+      contraseña: this.contraseña,
+    };
+  }
 }
