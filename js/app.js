@@ -16,6 +16,14 @@ function usuarioRepetido(nomUsuario){
     }
     return false;
 }
+function mensajeDeError(contrasena, usuario){
+    if (!contrasena) {
+        alert('No existe paridad entre la contraseña y la confirmacion de la misma, vuelve a intentarlo.');
+    }
+    if (usuario) {
+        alert('El nombre de usuario elegido no esta disponible, intenta con uno diferente.');
+    }
+}
 
 const formularioDeRegistro = document.querySelectorAll("form");
 const usuarios = [];
@@ -30,9 +38,9 @@ const crearUsuario = (e) => {
   const localidad = document.getElementById("ciudad").value;
   const codigoPostal = document.getElementById("codigoPostal").value;
   const contrasena = document.getElementById("contraseña").value;
-  const confircontrasena = document.getElementById("confirmarContraseña").value;
+  const confirContrasena = document.getElementById("confirmarContraseña").value;
 
-  if (contraCorrecta(contrasena, confircontrasena) && !usuarioRepetido(nombreUsuario)) {
+  if (contraCorrecta(contrasena, confirContrasena) && !usuarioRepetido(nombreUsuario)) {
     const nuevoUsuario = new Usuario(
         false,
         nombreApellido,
@@ -46,11 +54,8 @@ const crearUsuario = (e) => {
       );
       usuarios.push(nuevoUsuario);
   } else {
-    alert(`Existe un problema con la contraseña, vuelvelo a intentar...${!usuarioRepetido(nombreUsuario)}`);
+    mensajeDeError(contraCorrecta(contrasena, confirContrasena),usuarioRepetido(nombreUsuario));
   }
-
-  console.log(usuarios[usuarios.length-1]);
-  console.log(usuarios.length);
 };
 
 formularioDeRegistro[1].addEventListener("submit", crearUsuario);
