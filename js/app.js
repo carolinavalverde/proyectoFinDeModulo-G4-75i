@@ -1,23 +1,47 @@
 import Usuario from "./classUsuario.js";
 
+function contraCorrecta(contra, confirContra) {
+    if (contra.length > 7 && contra === confirContra) {
+        return true;
+    } else{
+        return false;
+    }
+}
+
 const formularioDeRegistro = document.querySelectorAll("form");
 const usuarios = [];
 const crearUsuario = (e) => {
-  e.preventDefault();
+  e.preventDefault(); 
 
-  const nombreApellido = document.getElementById('nombreApellido').value;
-  const nombreUsuario = document.getElementById('nombreUsuario').value;
-  const email = document.getElementById('email').value;
-  const telefono = document.getElementById('telefono').value;
-  const domicilio = document.getElementById('domicilio').value;
-  const localidad = document.getElementById('ciudad').value;
-  const codigoPostal = document.getElementById('codigoPostal').value;
-  const contraseña = document.getElementById('contraseña').value;
+  const nombreApellido = document.getElementById("nombreApellido").value;
+  const nombreUsuario = document.getElementById("nombreUsuario").value;
+  const email = document.getElementById("email").value;
+  const telefono = document.getElementById("telefono").value;
+  const domicilio = document.getElementById("domicilio").value;
+  const localidad = document.getElementById("ciudad").value;
+  const codigoPostal = document.getElementById("codigoPostal").value;
+  const contrasena = document.getElementById("contraseña").value;
+  const confircontrasena = document.getElementById("confirmarContraseña").value;
 
-  const nuevoUsuario = new Usuario(false,nombreApellido,nombreUsuario,email,telefono,domicilio,localidad,codigoPostal,contraseña);
-  usuarios.push(nuevoUsuario);
+  if (contraCorrecta(contrasena, confircontrasena)) {
+    const nuevoUsuario = new Usuario(
+        false,
+        nombreApellido,
+        nombreUsuario,
+        email,
+        telefono,
+        domicilio,
+        localidad,
+        codigoPostal,
+        contrasena
+      );
+      usuarios.push(nuevoUsuario);
+  } else {
+    alert('Existe un problema con la contraseña, vuelvelo a intentar...');
+  }
 
-  console.log(usuarios[0]);
+  console.log(usuarios[usuarios.length-1]);
+  console.log(usuarios.length);
 };
 
 formularioDeRegistro[1].addEventListener("submit", crearUsuario);
