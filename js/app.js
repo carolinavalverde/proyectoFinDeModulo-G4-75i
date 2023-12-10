@@ -8,6 +8,15 @@ function contraCorrecta(contra, confirContra) {
     }
 }
 
+function usuarioRepetido(nomUsuario){
+    for (let index = 0; index < usuarios.length; index++) {
+        if (usuarios[index].nombreUsuario === nomUsuario ) {
+            return true;
+        }        
+    }
+    return false;
+}
+
 const formularioDeRegistro = document.querySelectorAll("form");
 const usuarios = [];
 const crearUsuario = (e) => {
@@ -23,7 +32,7 @@ const crearUsuario = (e) => {
   const contrasena = document.getElementById("contraseña").value;
   const confircontrasena = document.getElementById("confirmarContraseña").value;
 
-  if (contraCorrecta(contrasena, confircontrasena)) {
+  if (contraCorrecta(contrasena, confircontrasena) && !usuarioRepetido(nombreUsuario)) {
     const nuevoUsuario = new Usuario(
         false,
         nombreApellido,
@@ -37,7 +46,7 @@ const crearUsuario = (e) => {
       );
       usuarios.push(nuevoUsuario);
   } else {
-    alert('Existe un problema con la contraseña, vuelvelo a intentar...');
+    alert(`Existe un problema con la contraseña, vuelvelo a intentar...${!usuarioRepetido(nombreUsuario)}`);
   }
 
   console.log(usuarios[usuarios.length-1]);
