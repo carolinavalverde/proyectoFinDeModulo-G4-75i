@@ -32,6 +32,7 @@ main {
 /* pagina principal */
 .contenedorPrincipal {
   position: relative;
+}
 
 img {
   width: 100%;
@@ -164,7 +165,7 @@ img {
 }
 .textoPaginaregistro {
   margin-bottom: 50px;
-
+}
 .botonSecundarioPaginaPrincipal {
   font-size: 1.2em;
   font-family: "Titillium Web", sans-serif;
