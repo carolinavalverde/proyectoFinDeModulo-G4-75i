@@ -59,7 +59,7 @@ const crearUsuario = (e) => {
         contrasena
       );
       usuarios.push(nuevoUsuario);
-      formularioDeRegistro[1].reset();
+      formularioDeRegistro[0].reset();
       guardarEnLocalStorage();
       //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio 
   } else {
@@ -68,4 +68,4 @@ const crearUsuario = (e) => {
  
 };
 
-formularioDeRegistro[1].addEventListener("submit", crearUsuario);
+formularioDeRegistro[0].addEventListener("submit", crearUsuario);
