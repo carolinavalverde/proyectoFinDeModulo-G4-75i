@@ -22,6 +22,14 @@ main {
   background-position: center center;
 }
 
+
+/* pagina error */
+.textoPaginaError {
+  color: #9eadcf;
+  font-size: 2.5em;
+  font-family: "Titillium Web", sans-serif;
+}
+
 /* pagina principal */
 .contenedorPrincipal {
   position: relative;
@@ -218,4 +226,5 @@ img {
     display: none;
   }
 }
+
 
