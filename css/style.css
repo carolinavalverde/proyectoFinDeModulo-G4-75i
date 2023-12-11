@@ -32,7 +32,6 @@ main {
 /* pagina principal */
 .contenedorPrincipal {
   position: relative;
-}
 
 img {
   width: 100%;
@@ -95,7 +94,7 @@ img {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.1);
   z-index: 10;
 }
 
@@ -154,6 +153,17 @@ img {
   opacity: 1;
   width: 120%;
 }
+
+.botonRegistro {
+  margin-top: -5%;
+}
+.iBordo {
+  color: #9eadcf6e;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+.textoPaginaregistro {
+  margin-bottom: 50px;
 
 .botonSecundarioPaginaPrincipal {
   font-size: 1.2em;
