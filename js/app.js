@@ -1,40 +1,60 @@
 import Usuario from "./classUsuario.js";
 
 function esIgual(textoUno, textoDos) {
-    if (textoUno === textoDos) {
-        return true;
-    } else{
-        return false;
-    }
-}
-
-function usuarioRepetido(nomUsuario){
-    for (let index = 0; index < usuarios.length; index++) {
-        if (usuarios[index].nombreUsuario === nomUsuario ) {
-            return true;
-        }        
-    }
+  if (textoUno === textoDos) {
+    return true;
+  } else {
     return false;
+  }
 }
 
-function mensajeDeError(contrasena, usuario){
-    if (!contrasena) {
-        alert('No existe paridad entre la contraseña y la confirmacion de la misma, vuelve a intentarlo.');
+function usuarioRepetido(nomUsuario) {
+  for (let index = 0; index < usuarios.length; index++) {
+    if (usuarios[index].nombreUsuario === nomUsuario) {
+      return true;
     }
-    if (usuario) {
-        alert('El nombre de usuario elegido no esta disponible, intenta con uno diferente.');
-    }
+  }
+  return false;
 }
 
-function guardarEnLocalStorage(){
-    localStorage.setItem('usuariosKey', JSON.stringify(usuarios));
+function rangoDeCaracteres(texto, min, max) {
+  if (texto.length >= min && texto.length <= max) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-const formularioDeRegistro = document.getElementsByClassName('textoPaginaregistro');
+//esta funcion deberia ser remplazada por una solucion mas estetica
+function mensajeDeError(contrasena, usuario) {
+  if (!contrasena) {
+    alert(
+      "No existe paridad entre la contraseña y la confirmacion de la misma, vuelve a intentarlo."
+    );
+  }
+  if (usuario) {
+    alert(
+      "El nombre de usuario elegido no esta disponible, intenta con uno diferente."
+    );
+  }
+  alert('existe un error en alguno de los campos');
+}
+
+function borrarFormulario() {
+  formularioDeRegistro[0].reset();
+}
+
+function guardarEnLocalStorage() {
+  localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
+}
+
+const formularioDeRegistro = document.getElementsByClassName(
+  "textoPaginaregistro"
+);
 const usuarios = [];
 
 const crearUsuario = (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const nombreApellido = document.getElementById("nombreApellido").value;
   const nombreUsuario = document.getElementById("nombreUsuario").value;
@@ -46,26 +66,39 @@ const crearUsuario = (e) => {
   const contrasena = document.getElementById("contraseña").value;
   const confirContrasena = document.getElementById("confirmarContraseña").value;
 
-  if (esIgual(contrasena, confirContrasena) && !usuarioRepetido(nombreUsuario)) {
+  if (
+    esIgual(contrasena, confirContrasena) &&
+    !usuarioRepetido(nombreUsuario) &&
+    rangoDeCaracteres(nombreApellido,5,50) &&
+    rangoDeCaracteres(nombreUsuario,6,30) &&
+    rangoDeCaracteres(email,5,100) &&
+    rangoDeCaracteres(telefono,6,10) &&
+    rangoDeCaracteres(domicilio,6,30) &&
+    rangoDeCaracteres(localidad,6,25) &&
+    rangoDeCaracteres(codigoPostal,3,4) &&
+    rangoDeCaracteres(contrasena,8,20) 
+  ) {
     const nuevoUsuario = new Usuario(
-        false,
-        nombreApellido,
-        nombreUsuario,
-        email,
-        telefono,
-        domicilio,
-        localidad,
-        codigoPostal,
-        contrasena
-      );
-      usuarios.push(nuevoUsuario);
-      formularioDeRegistro[0].reset();
-      guardarEnLocalStorage();
-      //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio 
+      false,
+      nombreApellido,
+      nombreUsuario,
+      email,
+      telefono,
+      domicilio,
+      localidad,
+      codigoPostal,
+      contrasena
+    );
+    usuarios.push(nuevoUsuario);
+    borrarFormulario();
+    guardarEnLocalStorage();
+    //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio
   } else {
-    mensajeDeError(contraCorrecta(contrasena, confirContrasena),usuarioRepetido(nombreUsuario));
+    mensajeDeError(
+      contraCorrecta(contrasena, confirContrasena),
+      usuarioRepetido(nombreUsuario)
+    );
   }
- 
 };
 
 formularioDeRegistro[0].addEventListener("submit", crearUsuario);
