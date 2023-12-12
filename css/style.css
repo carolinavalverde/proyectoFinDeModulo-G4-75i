@@ -3,6 +3,21 @@
 /* texto parrafos */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+/* nav fijo */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+/* nav */
+nav{
+background-color: #0a0b3d;
+}
+.logoNav{
+  font-family: "Titillium Web", sans-serif;
+  font-size: larger;
+}
+
 body {
   min-height: 100vh;
   display: flex;
