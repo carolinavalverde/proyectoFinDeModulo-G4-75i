@@ -197,6 +197,14 @@ img {
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
+
+  .logoNav{
+    font-family: "Titillium Web", sans-serif;
+    font-size: small;
+  }
+  .iconosNav {
+    font-size: small;
+  }
   .textoContenedorPrincipal {
     width: 80%;
     left: 50%;
