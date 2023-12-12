@@ -1,7 +1,7 @@
 import Usuario from "./classUsuario.js";
 
-function contraCorrecta(contra, confirContra) {
-    if (contra.length > 7 && contra === confirContra) {
+function esIgual(textoUno, textoDos) {
+    if (textoUno === textoDos) {
         return true;
     } else{
         return false;
@@ -46,7 +46,7 @@ const crearUsuario = (e) => {
   const contrasena = document.getElementById("contraseña").value;
   const confirContrasena = document.getElementById("confirmarContraseña").value;
 
-  if (contraCorrecta(contrasena, confirContrasena) && !usuarioRepetido(nombreUsuario)) {
+  if (esIgual(contrasena, confirContrasena) && !usuarioRepetido(nombreUsuario)) {
     const nuevoUsuario = new Usuario(
         false,
         nombreApellido,
