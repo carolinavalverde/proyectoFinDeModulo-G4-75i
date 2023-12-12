@@ -155,7 +155,7 @@ function marcarCampos(
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
 );
-const usuarios = [];
+const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
 
 const crearUsuario = (e) => {
   e.preventDefault();
