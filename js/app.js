@@ -30,7 +30,7 @@ function guardarEnLocalStorage(){
     localStorage.setItem('usuariosKey', JSON.stringify(usuarios));
 }
 
-const formularioDeRegistro = document.querySelectorAll("form");
+const formularioDeRegistro = document.getElementsByClassName('textoPaginaregistro');
 const usuarios = [];
 
 const crearUsuario = (e) => {
