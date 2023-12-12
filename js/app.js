@@ -26,18 +26,8 @@ function rangoDeCaracteres(texto, min, max) {
 }
 
 //esta funcion deberia ser remplazada por una solucion mas estetica
-function mensajeDeError(contrasena, usuario) {
-  if (!contrasena) {
-    alert(
-      "No existe paridad entre la contraseña y la confirmacion de la misma, vuelve a intentarlo."
-    );
-  }
-  if (usuario) {
-    alert(
-      "El nombre de usuario elegido no esta disponible, intenta con uno diferente."
-    );
-  }
-  alert('existe un error en alguno de los campos');
+function mensajeDeError() {
+  alert("existe un error en alguno de los campos");
 }
 
 function borrarFormulario() {
@@ -56,27 +46,29 @@ const usuarios = [];
 const crearUsuario = (e) => {
   e.preventDefault();
 
-  const nombreApellido = document.getElementById("nombreApellido").value;
-  const nombreUsuario = document.getElementById("nombreUsuario").value;
-  const email = document.getElementById("email").value;
-  const telefono = document.getElementById("telefono").value;
-  const domicilio = document.getElementById("domicilio").value;
-  const localidad = document.getElementById("ciudad").value;
-  const codigoPostal = document.getElementById("codigoPostal").value;
-  const contrasena = document.getElementById("contraseña").value;
-  const confirContrasena = document.getElementById("confirmarContraseña").value;
+  const nombreApellido = document.getElementById("nombreApellido").value.trim().toLowerCase();
+  const nombreUsuario = document.getElementById("nombreUsuario").value.trim().toLowerCase();
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const telefono = document.getElementById("telefono").value.trim();
+  const domicilio = document.getElementById("domicilio").value.trim().toLowerCase();
+  const localidad = document.getElementById("ciudad").value.trim().toLowerCase();
+  const codigoPostal = document.getElementById("codigoPostal").value.trim();
+  const contrasena = document.getElementById("contraseña").value.trim();
+  const confirContrasena = document
+    .getElementById("confirmarContraseña")
+    .value.trim();
 
   if (
     esIgual(contrasena, confirContrasena) &&
     !usuarioRepetido(nombreUsuario) &&
-    rangoDeCaracteres(nombreApellido,5,50) &&
-    rangoDeCaracteres(nombreUsuario,6,30) &&
-    rangoDeCaracteres(email,5,100) &&
-    rangoDeCaracteres(telefono,6,10) &&
-    rangoDeCaracteres(domicilio,6,30) &&
-    rangoDeCaracteres(localidad,6,25) &&
-    rangoDeCaracteres(codigoPostal,3,4) &&
-    rangoDeCaracteres(contrasena,8,20) 
+    rangoDeCaracteres(nombreApellido, 5, 50) &&
+    rangoDeCaracteres(nombreUsuario, 6, 30) &&
+    rangoDeCaracteres(email, 5, 100) &&
+    rangoDeCaracteres(telefono, 6, 10) &&
+    rangoDeCaracteres(domicilio, 6, 30) &&
+    rangoDeCaracteres(localidad, 6, 25) &&
+    rangoDeCaracteres(codigoPostal, 3, 4) &&
+    rangoDeCaracteres(contrasena, 8, 20)
   ) {
     const nuevoUsuario = new Usuario(
       false,
@@ -94,10 +86,7 @@ const crearUsuario = (e) => {
     guardarEnLocalStorage();
     //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio
   } else {
-    mensajeDeError(
-      contraCorrecta(contrasena, confirContrasena),
-      usuarioRepetido(nombreUsuario)
-    );
+    mensajeDeError();
   }
 };
 
