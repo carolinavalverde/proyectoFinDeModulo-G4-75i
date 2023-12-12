@@ -27,7 +27,12 @@ function rangoDeCaracteres(texto, min, max) {
 
 //esta funcion deberia ser remplazada por una solucion mas estetica
 function mensajeDeError() {
-  alert("existe un error en alguno de los campos");
+  Swal.fire({
+    icon: "error",
+    title: "Error en los datos",
+    showConfirmButton: false,
+    timer: 1500
+  });
 }
 
 function borrarFormulario() {
@@ -38,6 +43,15 @@ function guardarEnLocalStorage() {
   localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
 }
 
+function alertConfirmaUsuarioNuevo(nombreDelUsuario) {
+  Swal.fire({
+    icon: "success",
+    title: `El usuario ${nombreDelUsuario} fue creado con exito!`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
 );
@@ -46,12 +60,24 @@ const usuarios = [];
 const crearUsuario = (e) => {
   e.preventDefault();
 
-  const nombreApellido = document.getElementById("nombreApellido").value.trim().toLowerCase();
-  const nombreUsuario = document.getElementById("nombreUsuario").value.trim().toLowerCase();
+  const nombreApellido = document
+    .getElementById("nombreApellido")
+    .value.trim()
+    .toLowerCase();
+  const nombreUsuario = document
+    .getElementById("nombreUsuario")
+    .value.trim()
+    .toLowerCase();
   const email = document.getElementById("email").value.trim().toLowerCase();
   const telefono = document.getElementById("telefono").value.trim();
-  const domicilio = document.getElementById("domicilio").value.trim().toLowerCase();
-  const localidad = document.getElementById("ciudad").value.trim().toLowerCase();
+  const domicilio = document
+    .getElementById("domicilio")
+    .value.trim()
+    .toLowerCase();
+  const localidad = document
+    .getElementById("ciudad")
+    .value.trim()
+    .toLowerCase();
   const codigoPostal = document.getElementById("codigoPostal").value.trim();
   const contrasena = document.getElementById("contraseña").value.trim();
   const confirContrasena = document
@@ -84,6 +110,7 @@ const crearUsuario = (e) => {
     usuarios.push(nuevoUsuario);
     borrarFormulario();
     guardarEnLocalStorage();
+    alertConfirmaUsuarioNuevo(nombreUsuario);
     //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio
   } else {
     mensajeDeError();
