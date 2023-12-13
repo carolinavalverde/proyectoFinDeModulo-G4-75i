@@ -83,10 +83,18 @@ function marcarCampos(
   contra,
   confContra
 ) {
-  if (!esIgual(contra, confContra)) {
+  console.log(`esto corresponde a es igual: ${!esIgual(contra, confContra)}`);
+  console.log(`esto corresponde a validar contraseña: ${validarContrasena(contra)}`);
+  console.log(`esto corresponde a contraseña: ${contra}`);
+  console.log(`esto corresponde a confirmar contraseña: ${confContra}`);
+  if (esIgual(contra, confContra) && validarContrasena(contra)) {
+    document.getElementById("contraseña").classList.remove("is-valid");
+    document.getElementById("confirmarContraseña").classList.remove("is-valid");
     document.getElementById("contraseña").classList.add("is-invalid");
     document.getElementById("confirmarContraseña").classList.add("is-invalid");
   } else {
+    document.getElementById("contraseña").classList.remove("is-invalid");
+    document.getElementById("confirmarContraseña").classList.remove("is-invalid");
     document.getElementById("contraseña").classList.add("is-valid");
     document.getElementById("confirmarContraseña").classList.add("is-valid");
   }
@@ -97,17 +105,11 @@ function marcarCampos(
     document.getElementById("nombreApellido").classList.add("is-invalid");
   }
 
-  console.log(`esto es lo que trae como usuario ${usuario} `);
-
   if (rangoDeCaracteres(usuario, 6, 30) && !usuarioRepetido(usuario)) {
     document.getElementById("nombreUsuario").classList.add("is-valid");
-    console.log("si a entrao");
   } else {
-    console.log("no entro");
     document.getElementById("nombreUsuario").classList.add("is-invalid");
   }
-  console.log(`esto es el email: ${email}`);
-  console.log(`esto es lo que valida: ${validarMail(email)} `);
 
   if (rangoDeCaracteres(email, 5, 100) && validarMail(email)) {
     document.getElementById("email").classList.remove("is-invalid");
@@ -141,6 +143,7 @@ function marcarCampos(
     document.getElementById("codigoPostal").classList.add("is-invalid");
   }
 }
+
 function validarMail(mail) {
   const patron =
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
@@ -150,6 +153,17 @@ function validarMail(mail) {
     return false;
   }
 }
+
+function validarContrasena(contrasena){
+  const patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  if(patron.test(contrasena)){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+
 
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
@@ -171,6 +185,7 @@ const crearUsuario = (e) => {
 
   if (
     esIgual(contrasena.value, confirContrasena.value) &&
+    validarContrasena(contrasena.value)&&
     !usuarioRepetido(nombreUsuario.value) &&
     rangoDeCaracteres(nombreApellido.value, 5, 50) &&
     rangoDeCaracteres(nombreUsuario.value, 6, 30) &&
