@@ -4,8 +4,6 @@ const verMas = () => {
   const seccion = document.querySelector("#contenedorPadre");
 
   if (btnVerMas[0].innerText === "Ver más") {
-    console.log("desde la función ver más");
-
     const parrafoNuevo = document.createElement("p");
     parrafoNuevo.innerText =
       "Adaptación del cómic de Marvel Los Vengadores, el legendario grupo de superhéroes formado por Ironman, Hulk, Thor y el Capitán América entre otros.";
@@ -25,7 +23,6 @@ const verMas = () => {
 const obtenerTexto = (e) => {
   e.preventDefault();
   const inputBusqueda = document.querySelector("#inputBusqueda");
-  console.log(inputBusqueda.value);
 };
 
 const formularioBusqueda = document.querySelector("form");
