@@ -1,15 +1,36 @@
-const btnVerMas = document.getElementById("btnVerMas");
+const btnVerMas = document.getElementsByTagName("button");
+console.log(btnVerMas[0]);
 
-btnVerMas.addEventListener("click", () => {
-  const contenidoVerMas = document.querySelector(".contenidoVerMas");
+const verMas = () => {
+  const seccion = document.querySelector("#contenedorPadre");
 
-  contenidoVerMas.style.display =
-    contenidoVerMas.style.display === "none" ? "block" : "none";
+  if (btnVerMas[0].innerHTML === "Ver más") {
+    console.log("desde la función ver más");
 
-  btnVerMas.innerHTML =
-    contenidoVerMas.style.display === "none" ? "Ver más" : "Ocultar";
-  btnVerMas.className =
-    contenidoVerMas.style.display === "none"
-      ? "btn btn-primary"
-      : "btn btn-danger my-3";
-});
+    const parrafoNuevo = document.createElement("p");
+    parrafoNuevo.innerText =
+      "Adaptación del cómic de Marvel Los Vengadores, el legendario grupo de superhéroes formado por Ironman, Hulk, Thor y el Capitán América entre otros.";
+    parrafoNuevo.className = "textoDetallePelicula";
+
+    seccion.insertBefore(parrafoNuevo, btnVerMas[0]);
+
+    btnVerMas[0].innerHTML = "Ocultar";
+    btnVerMas[0].className = "btn btn-danger my-0";
+  } else {
+    console.log(seccion.children[0]);
+    seccion.removeChild(seccion.children[0]);
+    btnVerMas[0].innerHTML = "Ver más";
+    btnVerMas[0].className = "btn btn-primary";
+  }
+};
+
+const obtenerTexto = (e) => {
+  e.preventDefault();
+  const inputBusqueda = document.querySelector("#inputBusqueda");
+  console.log(inputBusqueda.value);
+};
+
+const formularioBusqueda = document.querySelector("form");
+
+btnVerMas[0].addEventListener("click", verMas);
+formularioBusqueda.addEventListener("submit", obtenerTexto);
