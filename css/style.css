@@ -179,6 +179,11 @@ img {
   border-radius: 42%;
 }
 
+/* detalle peliculas */
+.contenidoVerMas {
+  display: none;
+}
+
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
