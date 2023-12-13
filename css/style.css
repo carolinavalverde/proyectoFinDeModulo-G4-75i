@@ -4,12 +4,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 /* nav */
-nav{
-background-color: #0a0b3d;
+nav {
+  background-color: #0a0b3d;
 }
-.logoNav{
+.logoNav {
   font-family: "Titillium Web", sans-serif;
-  font-size: larger;
+  text-align: left;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 1px 0 #323372, 0 2px 0 #1e2063, 0 3px 0 #0a0b3d, 0 4px 0 #02031f,
+    0 5px 0 #12146e, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+
 }
 
 body {
@@ -191,12 +200,11 @@ img {
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
-
-  .logoNav{
+  .logoNav {
     font-family: "Titillium Web", sans-serif;
     font-size: small;
   }
-  .botomHamburguesa{
+  .botomHamburguesa {
     font-size: 0.5em;
   }
   .perfilNav {
@@ -232,9 +240,8 @@ img {
 }
 /* dispositivos medianos */
 @media screen and (min-width: 576px) and (max-width: 820px) {
-
   /* nav */
-  .botomHamburguesa{
+  .botomHamburguesa {
     font-size: 1em;
   }
   .perfilNav {
@@ -260,7 +267,6 @@ img {
 
 /* dispositivos grandes */
 @media screen and (min-width: 820.1px) {
-
   /* nav */
   .perfilNav {
     font-size: 2em;
