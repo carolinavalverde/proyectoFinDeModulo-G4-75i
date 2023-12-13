@@ -32,70 +32,90 @@
           >
             <p class="logoNav">Univ3rse Movies</p></a
           >
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active text-light"
-                  aria-current="page"
-                  href="./index.html"
-                  >Inicio</a
-                >
-              </li>
-              <section>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                Univ3rse Movies
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="#"
+                    >Inicio</a
+                  >
+                </li>
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle text-light"
-                    href="./pages/IniciarSesion.html"
+                    href="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Género
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <a class="dropdown-item" href="#Acción">Acción </a>
+                      <a class="dropdown-item text-light" href="#Acción"
+                        >Acción</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#Animadas">Animadas</a>
+                      <a class="dropdown-item text-light" href="#Animadas"
+                        >Animadas</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#Navideñas">Navideñas</a>
+                      <a class="dropdown-item text-light" href="#Navideñas"
+                        >Navideñas</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#Románticas">Románticas</a>
+                      <a class="dropdown-item text-light" href="#Románticas"
+                        >Románticas</a
+                      >
                     </li>
                   </ul>
                 </li>
-              </section>
-
-              <li class="nav-item">
-                <a class="nav-link text-light" href="./pages/contacto.html"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-light" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">Contacto</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Buscar"
+                  aria-label="Search"
+                />
+                <button class="btn btn-light" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
           </div>
           <div class="d-flex flex-row-reverse">
             <button
-              class="navbar-toggler bg-light iconosNav"
+              class="navbar-toggler bg-light"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar"
+              aria-controls="offcanvasDarkNavbar"
               aria-label="Toggle navigation"
             >
               <span class="navbar-toggler-icon"></span>
@@ -166,7 +186,7 @@
         </div>
       </section>
       <!-- categorias -->
-      <section class="container categoriaSm">
+      <section class="container categoriaSm" id="Género">
         <h1 class="tituloCategoria text-center my-2">
           ¡Disfrutá las mejores películas con nosotros!
         </h1>
