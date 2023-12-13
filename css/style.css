@@ -196,7 +196,10 @@ img {
     font-family: "Titillium Web", sans-serif;
     font-size: small;
   }
-  .iconosNav {
+  .botomHamburguesa{
+    font-size: 0.5em;
+  }
+  .perfilNav {
     font-size: 1em;
   }
   .textoContenedorPrincipal {
@@ -231,7 +234,10 @@ img {
 @media screen and (min-width: 576px) and (max-width: 820px) {
 
   /* nav */
-  .iconosNav {
+  .botomHamburguesa{
+    font-size: 1em;
+  }
+  .perfilNav {
     font-size: 1.5em;
   }
   .textoContenedorPrincipal h1 {
@@ -256,8 +262,8 @@ img {
 @media screen and (min-width: 820.1px) {
 
   /* nav */
-  .iconosNav {
-    font-size: 150%;
+  .perfilNav {
+    font-size: 2em;
   }
   .carouselNoneLgMd {
     display: none;
