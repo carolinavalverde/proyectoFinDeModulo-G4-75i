@@ -1,10 +1,9 @@
 const btnVerMas = document.getElementsByTagName("button");
-console.log(btnVerMas[0]);
 
 const verMas = () => {
   const seccion = document.querySelector("#contenedorPadre");
 
-  if (btnVerMas[0].innerHTML === "Ver más") {
+  if (btnVerMas[0].innerText === "Ver más") {
     console.log("desde la función ver más");
 
     const parrafoNuevo = document.createElement("p");
@@ -17,8 +16,7 @@ const verMas = () => {
     btnVerMas[0].innerHTML = "Ocultar";
     btnVerMas[0].className = "btn btn-danger my-0";
   } else {
-    console.log(seccion.children[0]);
-    seccion.removeChild(seccion.children[0]);
+    seccion.removeChild(seccion.children[2]);
     btnVerMas[0].innerHTML = "Ver más";
     btnVerMas[0].className = "btn btn-primary";
   }
