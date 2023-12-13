@@ -22,25 +22,16 @@
     />
   </head>
   <body>
-    <header>
+    <header class="sticky-top">
       <nav class="navbar navbar-expand-lg p-4">
-        <div class="container-fluid">
+        <div class="container-fluid flex-wrap flex-nowrap">
           <!-- logo -->
-          <a href="./index.html" class="navbar-brand text-light">
+          <a
+            href="./index.html"
+            class="navbar-brand text-light justify-content-sm-start d-flex justify-content-lg-start d-flex justify-content-md-start"
+          >
             <p class="logoNav">Univ3rse Movies</p></a
           >
-          <button
-            class="navbar-toggler bg-light iconosNav"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -97,32 +88,46 @@
               </button>
             </form>
           </div>
-          <li class="nav-item dropdown d-flex ms-4">
-            <a
-              class="nav-link dropdown-toggle text-light"
-              href="./pages/login.html"
-              role="button"
-              data-bs-toggle="dropdown"
+          <div class="d-flex flex-row-reverse">
+            <button
+              class="navbar-toggler bg-light iconosNav"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
               aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-              <i class="bi bi-person-circle fa-xl"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" href="./pages/login.html"
-                  >Iniciar Sesion</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="./pages/registro.html"
-                  >Registrarse</a
-                >
-              </li>
-            </ul>
-          </li>
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <li class="nav-item dropdown d-flex mx-3">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="./pages/login.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-circle iconosNav"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="./pages/login.html"
+                    >Iniciar Sesion</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./pages/registro.html"
+                    >Registrarse</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </div>
         </div>
       </nav>
     </header>
+
     <main class="mainFondo">
       <!-- pelicula destacada -->
       <section class="contenedorPrincipal">

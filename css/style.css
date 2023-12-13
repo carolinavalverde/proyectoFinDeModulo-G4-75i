@@ -3,12 +3,6 @@
 /* texto parrafos */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-/* nav fijo */
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-}
 /* nav */
 nav{
 background-color: #0a0b3d;
@@ -203,7 +197,7 @@ img {
     font-size: small;
   }
   .iconosNav {
-    font-size: small;
+    font-size: 1em;
   }
   .textoContenedorPrincipal {
     width: 80%;
@@ -235,6 +229,11 @@ img {
 }
 /* dispositivos medianos */
 @media screen and (min-width: 576px) and (max-width: 820px) {
+
+  /* nav */
+  .iconosNav {
+    font-size: 1.5em;
+  }
   .textoContenedorPrincipal h1 {
     font-size: 3.5em;
   }
@@ -255,6 +254,11 @@ img {
 
 /* dispositivos grandes */
 @media screen and (min-width: 820.1px) {
+
+  /* nav */
+  .iconosNav {
+    font-size: 150%;
+  }
   .carouselNoneLgMd {
     display: none;
   }
