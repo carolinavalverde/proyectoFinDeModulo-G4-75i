@@ -87,7 +87,7 @@ function marcarCampos(
   console.log(`esto corresponde a validar contraseña: ${validarContrasena(contra)}`);
   console.log(`esto corresponde a contraseña: ${contra}`);
   console.log(`esto corresponde a confirmar contraseña: ${confContra}`);
-  if (esIgual(contra, confContra) && validarContrasena(contra)) {
+  if (!esIgual(contra, confContra) || !validarContrasena(contra)) {
     document.getElementById("contraseña").classList.remove("is-valid");
     document.getElementById("confirmarContraseña").classList.remove("is-valid");
     document.getElementById("contraseña").classList.add("is-invalid");
@@ -98,6 +98,7 @@ function marcarCampos(
     document.getElementById("contraseña").classList.add("is-valid");
     document.getElementById("confirmarContraseña").classList.add("is-valid");
   }
+
 
   if (rangoDeCaracteres(nombreApellido, 5, 50)) {
     document.getElementById("nombreApellido").classList.add("is-valid");
