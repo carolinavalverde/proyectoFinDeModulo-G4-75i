@@ -258,6 +258,14 @@ img {
   .categoriaSm {
     font-size: 0.7em;
   }
+
+  .tituloAdminSm{
+    font-size: 1.3rem;
+  }
+
+  .buttonAdminAgregar{
+    font-size: 0.7rem;
+  }
 }
 /* dispositivos medianos */
 @media screen and (min-width: 576px) and (max-width: 820px) {
