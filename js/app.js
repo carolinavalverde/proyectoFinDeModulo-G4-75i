@@ -71,7 +71,16 @@ function alertConfirmaUsuarioNuevo(nombreDelUsuario) {
   });
 }
 
-//corregir esta clase por que no marca los campos que se llenaron de forma correcta
+function marcaVerde(elemento) {
+  document.getElementById(elemento).classList.remove("is-invalid");
+  document.getElementById(elemento).classList.add("is-valid");
+}
+
+function marcaRoja(elemento) {
+  document.getElementById(elemento).classList.remove("is-valid");
+  document.getElementById(elemento).classList.add("is-invalid");
+}
+
 function marcarCampos(
   nombreApellido,
   usuario,
@@ -83,65 +92,54 @@ function marcarCampos(
   contra,
   confContra
 ) {
-  console.log(`esto corresponde a es igual: ${!esIgual(contra, confContra)}`);
-  console.log(`esto corresponde a validar contraseña: ${validarContrasena(contra)}`);
-  console.log(`esto corresponde a contraseña: ${contra}`);
-  console.log(`esto corresponde a confirmar contraseña: ${confContra}`);
   if (!esIgual(contra, confContra) || !validarContrasena(contra)) {
-    document.getElementById("contraseña").classList.remove("is-valid");
-    document.getElementById("confirmarContraseña").classList.remove("is-valid");
-    document.getElementById("contraseña").classList.add("is-invalid");
-    document.getElementById("confirmarContraseña").classList.add("is-invalid");
+    marcaRoja("contraseña");
+    marcaRoja("confirmarContraseña");
   } else {
-    document.getElementById("contraseña").classList.remove("is-invalid");
-    document.getElementById("confirmarContraseña").classList.remove("is-invalid");
-    document.getElementById("contraseña").classList.add("is-valid");
-    document.getElementById("confirmarContraseña").classList.add("is-valid");
+    marcaVerde("contraseña");
+    marcaVerde("confirmarContraseña");
   }
 
-
   if (rangoDeCaracteres(nombreApellido, 5, 50)) {
-    document.getElementById("nombreApellido").classList.add("is-valid");
+    marcaVerde("nombreApellido");
   } else {
-    document.getElementById("nombreApellido").classList.add("is-invalid");
+    marcaRoja("nombreApellido");
   }
 
   if (rangoDeCaracteres(usuario, 6, 30) && !usuarioRepetido(usuario)) {
-    document.getElementById("nombreUsuario").classList.add("is-valid");
+    marcaVerde("nombreUsuario");
   } else {
-    document.getElementById("nombreUsuario").classList.add("is-invalid");
+    marcaRoja("nombreUsuario");
   }
 
   if (rangoDeCaracteres(email, 5, 100) && validarMail(email)) {
-    document.getElementById("email").classList.remove("is-invalid");
-    document.getElementById("email").classList.add("is-valid");
+    marcaVerde("email");
   } else {
-    document.getElementById("email").classList.remove("is-valid");
-    document.getElementById("email").classList.add("is-invalid");
+    marcaRoja("email");
   }
 
   if (rangoDeCaracteres(tel, 6, 10)) {
-    document.getElementById("telefono").classList.add("is-valid");
+    marcaVerde("telefono");
   } else {
-    document.getElementById("telefono").classList.add("is-invalid");
+    marcaRoja("telefono");
   }
 
   if (rangoDeCaracteres(domicilio, 6, 30)) {
-    document.getElementById("domicilio").classList.add("is-valid");
+    marcaVerde("domicilio");
   } else {
-    document.getElementById("domicilio").classList.add("is-invalid");
+    marcaRoja("domicilio");
   }
 
   if (rangoDeCaracteres(localidad, 6, 25)) {
-    document.getElementById("ciudad").classList.add("is-valid");
+    marcaVerde("ciudad");
   } else {
-    document.getElementById("ciudad").classList.add("is-invalid");
+    marcaRoja("ciudad");
   }
 
   if (rangoDeCaracteres(codigoP, 3, 4)) {
-    document.getElementById("codigoPostal").classList.add("is-valid");
+    marcaVerde("codigoPostal");
   } else {
-    document.getElementById("codigoPostal").classList.add("is-invalid");
+    marcaRoja("codigoPostal");
   }
 }
 
@@ -155,16 +153,14 @@ function validarMail(mail) {
   }
 }
 
-function validarContrasena(contrasena){
+function validarContrasena(contrasena) {
   const patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-  if(patron.test(contrasena)){
+  if (patron.test(contrasena)) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
-
-
 
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
@@ -186,7 +182,7 @@ const crearUsuario = (e) => {
 
   if (
     esIgual(contrasena.value, confirContrasena.value) &&
-    validarContrasena(contrasena.value)&&
+    validarContrasena(contrasena.value) &&
     !usuarioRepetido(nombreUsuario.value) &&
     rangoDeCaracteres(nombreApellido.value, 5, 50) &&
     rangoDeCaracteres(nombreUsuario.value, 6, 30) &&
