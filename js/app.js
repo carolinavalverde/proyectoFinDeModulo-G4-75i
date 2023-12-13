@@ -63,15 +63,12 @@ function guardarEnLocalStorage() {
 }
 
 function alertConfirmaUsuarioNuevo(nombreDelUsuario) {
- 
-    Swal.fire({
-      icon: "success",
-      title: `El usuario ${nombreDelUsuario} fue creado con exito!`,
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  
-  
+  Swal.fire({
+    icon: "success",
+    title: `El usuario ${nombreDelUsuario} fue creado con exito!`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
 }
 
 //corregir esta clase por que no marca los campos que se llenaron de forma correcta
@@ -109,10 +106,14 @@ function marcarCampos(
     console.log("no entro");
     document.getElementById("nombreUsuario").classList.add("is-invalid");
   }
+  console.log(`esto es el email: ${email}`);
+  console.log(`esto es lo que valida: ${validarMail(email)} `);
 
-  if (rangoDeCaracteres(email, 5, 100)) {
+  if (rangoDeCaracteres(email, 5, 100) && validarMail(email)) {
+    document.getElementById("email").classList.remove("is-invalid");
     document.getElementById("email").classList.add("is-valid");
   } else {
+    document.getElementById("email").classList.remove("is-valid");
     document.getElementById("email").classList.add("is-invalid");
   }
 
@@ -138,6 +139,15 @@ function marcarCampos(
     document.getElementById("codigoPostal").classList.add("is-valid");
   } else {
     document.getElementById("codigoPostal").classList.add("is-invalid");
+  }
+}
+function validarMail(mail) {
+  const patron =
+    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  if (patron.test(mail)) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -185,7 +195,7 @@ const crearUsuario = (e) => {
     usuarios.push(nuevoUsuario);
     borrarFormulario();
     guardarEnLocalStorage();
-    alertConfirmaUsuarioNuevo(usuarios[usuarios.length-1].nombreUsuario); 
+    alertConfirmaUsuarioNuevo(usuarios[usuarios.length - 1].nombreUsuario);
     //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio
   } else {
     marcarCampos(
