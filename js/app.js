@@ -63,29 +63,14 @@ function guardarEnLocalStorage() {
 }
 
 function alertConfirmaUsuarioNuevo(nombreDelUsuario) {
-  if (nombreDelUsuario === "carovalverde") {
-    Swal.fire({
-      title: "hola gfa :) ",
-      width: 600,
-      padding: "3em",
-      color: "#716add",
-      background: "#fff url(https://sweetalert2.github.io/#images/trees.png)",
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/#images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-    });
-    
-  } else {
+ 
     Swal.fire({
       icon: "success",
       title: `El usuario ${nombreDelUsuario} fue creado con exito!`,
       showConfirmButton: false,
       timer: 1500,
     });
-  }
+  
   
 }
 
@@ -115,9 +100,13 @@ function marcarCampos(
     document.getElementById("nombreApellido").classList.add("is-invalid");
   }
 
-  if (rangoDeCaracteres(usuario, 6, 30)) {
+  console.log(`esto es lo que trae como usuario ${usuario} `);
+
+  if (rangoDeCaracteres(usuario, 6, 30) && !usuarioRepetido(usuario)) {
     document.getElementById("nombreUsuario").classList.add("is-valid");
+    console.log("si a entrao");
   } else {
+    console.log("no entro");
     document.getElementById("nombreUsuario").classList.add("is-invalid");
   }
 
