@@ -179,6 +179,27 @@ img {
   border-radius: 42%;
 }
 
+/* detalle peliculas */
+.contenidoVerMas {
+  display: none;
+}
+
+.cardDetallePelicula{
+  background-color: rgba(4, 10, 60, 0.8); 
+}
+
+.tituloDetallePelicula {
+  color: #9eadcf;
+  font-size: 2em;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.textoDetallePelicula {
+  color: #9eadcf;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+}
+
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
