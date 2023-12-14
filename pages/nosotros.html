@@ -89,7 +89,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link text-light" href="../pages/nosotros.html"
                     >Nosotros</a
                   >
@@ -137,7 +137,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item active" href="../pages/login.html"
+                  <a class="dropdown-item" href="../pages/login.html"
                     >Iniciar Sesion</a
                   >
                 </li>
@@ -153,110 +153,117 @@
       </nav>
     </header>
     <main class="mainFondo">
-      <!-- form login -->
-      <section class="container">
-        <h1 class="text-center py-4 tituloPaginaregistro">INICIAR SESIÓN</h1>
-        <div class="row">
-          <div class="mt-5 col-lg-6 col-sm-12">
-            <div class="row justify-content-center">
-              <div class="col-md-6">
-                <form>
-                  <div class="mb-3">
-                    <label for="email" class="form-label iBordo"
-                      >Correo Electrónico</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control formLogin"
-                      id="email"
-                      placeholder="nombre@ejemplo.com"
-                      minlength="5"
-                      maxlength="100"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="password" class="form-label iBordo"
-                      >Contraseña</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control formLogin"
-                      id="password"
-                      placeholder="Escribe tu contraseña"
-                      minlength="8"
-                      maxlength="15"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3 text-center">
-                    <span class="iBordo">Ingresa con:</span>
-                    <a
-                      class="mx-12 iBordo linkRedesLogin"
-                      href="../pages/error-404.html"
-                    >
-                      <i class="fa-brands fa-google fa-xl"></i>
-                    </a>
-                    <a
-                      class="mx-12 iBordo linkRedesLogin"
-                      href="../pages/error.html"
-                    >
-                      <i class="fa-brands fa-facebook fa-xl"></i>
-                    </a>
-                    <a
-                      class="mx-12 iBordo linkRedesLogin"
-                      href="../pages/error.html"
-                    >
-                      <i class="fa-brands fa-instagram fa-xl"></i>
-                    </a>
-                  </div>
-                  <div class="mb-3 text-center">
-                    <a href="../pages/error.html" class="iBordo"
-                      >¿Olvidaste tu contraseña?</a
-                    >
-                  </div>
-                  <div
-                    class="container mb-5 d-flex flex-column flex-wrap align-content-center justify-content-center col-4"
-                  >
-                    <div class="my-3 text-center">
-                      <button
-                        type="submit"
-                        class="btn botonPrincipal botonPrincipalhover"
-                      >
-                        Iniciar Sesión
-                      </button>
-                    </div>
-                    <div class="my-3 text-center">
-                      <a class="aLogin" href="../pages/registro.html">
-                        <span>¿No tenes cuenta?</span></a
-                      >
-                      <button
-                        type="submit"
-                        class="btn botonPrincipal botonPrincipalhover"
-                      >
-                        <a class="aLogin" href="../pages/registro.html">
-                          Crear cuenta
-                        </a>
-                      </button>
-                    </div>
-                  </div>
-                </form>
+      <section class="container my-3">
+        <h1 class="text-center mb-4">El Team 4 🚀</h1>
+      </section>
+      <section class="container my-3 d-flex flex-column">
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/robertoArebalo.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen robertoArebalo"
+              />
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Roberto Arebalo</h5>
+                <p class="card-text">
+                  ¡Saludos amantes del séptimo arte! Soy el crítico de cine de
+                  este increíble equipo. ¿Preparados para descubrir nuevas
+                  perspectivas cinematográficas?
+                </p>
               </div>
             </div>
           </div>
-          <!-- Imagen de Login -->
-          <section class="col-lg-6 col-sm-12 mb-4 dNoneindex dNonelogin">
-            <img
-              class="img-fluid rounded w-100 h-100 d-xs-none"
-              src="../img/imagenLogin.gif"
-              alt="imagen de login"
-            />
-          </section>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-end">
+          <div class="row g-0">
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Vale Acosta</h5>
+                <p class="card-text">
+                  ¡Hola cinéfilos! Soy la fanática de los dramas románticos y
+                  las películas clásicas. Estoy aquí para descubrir nuevas joyas
+                  cinematográficas contigo!
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/valeAcosta.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen valeAcosta"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/pabloAvellaneda.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen pabloAvellaneda"
+              />
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Pablo Avellaneda</h5>
+                <p class="card-text">
+                  ¡Hola Mundo a los amantes de lo clásico! Aquí para llevarlos
+                  en un viaje nostálgico a explorar juntos la rica historia del
+                  cine navideño.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-end">
+          <div class="row g-0">
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Caro Valverde</h5>
+                <p class="card-text">
+                  ¡Hey amantes de la animación! Nos sumergiremos en la belleza
+                  visual que define a estas películas y sus mundos de ensueño.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/caroValverde.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen caroValverde"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/pabloLopezSardi.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen pabloLopezSardi"
+              />
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Pablo López Sardi</h5>
+                <p class="card-text">
+                  Desde explosiones épicas hasta coreografías de pelea
+                  asombrosas, disfrutemos las mejores películas. ¡Alistémonos
+                  para la acción!
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <footer></footer>
-    <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
