@@ -6,10 +6,10 @@
     <meta name="description" content="Univ3rse Movies" />
     <meta
       name="keywords"
-      content="Univ3rseMovies, Univ3rse, Movies, streaming, registro"
+      content="Univ3rseMovies, Univ3rse, Movies, streaming"
     />
     <meta name="author" content="Team4" />
-    <title>Registro</title>
+    <title>Univ3rse Movies</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link
@@ -89,7 +89,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link text-light" href="../pages/nosotros.html"
                     >Nosotros</a
                   >
@@ -142,7 +142,7 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item active" href="./pages/registro.html"
+                  <a class="dropdown-item" href="./pages/registro.html"
                     >Registrarse</a
                   >
                 </li>
@@ -153,157 +153,117 @@
       </nav>
     </header>
     <main class="mainFondo">
-      <section class="container">
-        <h1 class="tituloPaginaregistro text-center mt-3">CREAR CUENTA</h1>
-        <div class="d-flex m-auto col-lg-8 col-md-10 col-sm-10">
-          <form class="textoPaginaregistro">
-            <div class="m-2">
-              <label for="nombreApellido" class="form-label formRegistro"
-                >Nombre y Apellido:</label
-              >
-              <input
-                type="text"
-                class="form-control inputFormulario"
-                id="nombreApellido"
-                placeholder="Ej: Ana Perez"
-                minlength="5"
-                maxlength="50"
-                required
+      <section class="container my-3">
+        <h1 class="text-center mb-4">El Team 4 🚀</h1>
+      </section>
+      <section class="container my-3 d-flex flex-column">
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/robertoArebalo.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen robertoArebalo"
               />
             </div>
-            <div class="m-2">
-              <label for="nombreUsuario" class="form-label formRegistro"
-                >Nombre de Usuario:</label
-              >
-              <input
-                type="text"
-                class="form-control inputFormulario"
-                id="nombreUsuario"
-                placeholder="Ej: anitaperez"
-                minlength="6"
-                maxlength="30"
-                required
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Roberto Arebalo</h5>
+                <p class="card-text">
+                  ¡Saludos amantes del séptimo arte! Soy el crítico de cine de
+                  este increíble equipo. ¿Preparados para descubrir nuevas
+                  perspectivas cinematográficas?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-end">
+          <div class="row g-0">
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Vale Acosta</h5>
+                <p class="card-text">
+                  ¡Hola cinéfilos! Soy la fanática de los dramas románticos y
+                  las películas clásicas. Estoy aquí para descubrir nuevas joyas
+                  cinematográficas contigo!
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/valeAcosta.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen valeAcosta"
               />
             </div>
-            <div class="m-2">
-              <label for="email" class="form-label formRegistro">Email:</label>
-              <input
-                type="email"
-                class="form-control inputFormulario"
-                id="email"
-                placeholder="Ej: anaperez@hotmail.com"
-                minlength="5"
-                maxlength="100"
-                required
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/pabloAvellaneda.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen pabloAvellaneda"
               />
             </div>
-            <div class="m-2">
-              <label for="telefono" class="form-label formRegistro"
-                >Teléfono:</label
-              >
-              <input
-                type="number"
-                class="form-control inputFormulario"
-                id="telefono"
-                placeholder="Ej: 3815645887"
-                minlength="6"
-                maxlength="10"
-                required
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Pablo Avellaneda</h5>
+                <p class="card-text">
+                  ¡Hola Mundo a los amantes de lo clásico! Aquí para llevarlos
+                  en un viaje nostálgico a explorar juntos la rica historia del
+                  cine navideño.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-end">
+          <div class="row g-0">
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Caro Valverde</h5>
+                <p class="card-text">
+                  ¡Hey amantes de la animación! Nos sumergiremos en la belleza
+                  visual que define a estas películas y sus mundos de ensueño.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/caroValverde.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen caroValverde"
               />
             </div>
-            <div class="m-2">
-              <label for="domicilio" class="form-label formRegistro"
-                >Domicilio:</label
-              >
-              <input
-                type="text"
-                class="form-control inputFormulario"
-                id="domicilio"
-                placeholder="Ej: Buenos Aires 120"
-                minlength="6"
-                maxlength="30"
-                required
+          </div>
+        </div>
+        <div class="card mb-3 col-8 d-flex align-self-start">
+          <div class="row g-0">
+            <div class="col-md-4 bg-danger">
+              <img
+                src="../img/pabloLopezSardi.jpg"
+                class="img-fluid rounded-circle"
+                alt="imagen pabloLopezSardi"
               />
             </div>
-            <div class="m-2">
-              <label for="ciudad" class="form-label formRegistro"
-                >Localidad:</label
-              >
-              <input
-                type="text"
-                class="form-control inputFormulario"
-                id="ciudad"
-                placeholder="Ej: Yerba Buena"
-                minlength="6"
-                maxlength="25"
-                required
-              />
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Pablo López Sardi</h5>
+                <p class="card-text">
+                  Desde explosiones épicas hasta coreografías de pelea
+                  asombrosas, disfrutemos las mejores películas. ¡Alistémonos
+                  para la acción!
+                </p>
+              </div>
             </div>
-            <div class="m-2">
-              <label for="codigoPostal" class="form-label formRegistro"
-                >Código Postal:</label
-              >
-              <input
-                type="number"
-                class="form-control inputFormulario"
-                id="codigoPostal"
-                placeholder="Ej: 4101"
-                minlength="3"
-                maxlength="10"
-                required
-              />
-            </div>
-            <div class="m-2">
-              <label for="contraseña" class="form-label formRegistro"
-                >Contraseña:</label
-              >
-              <input
-                type="password"
-                class="form-control inputFormulario"
-                id="contraseña"
-                placeholder="Escribe tu contraseña"
-                minlength="8"
-                maxlength="20"
-                required
-              />
-            </div>
-            <div class="m-2">
-              <label for="confirmarContraseña" class="form-label formRegistro"
-                >Confirmar contraseña:</label
-              >
-              <input
-                type="password"
-                id="confirmarContraseña"
-                class="form-control inputFormulario"
-                placeholder="Confirmá tu contraseña"
-                aria-describedby="contraseña"
-                minlength="8"
-                maxlength="20"
-                required
-              />
-            </div>
-            <div class="form-text mx-4">
-              <p class="iBordo">
-                La contraseña debe tener al entre 8 y 16 caracteres, al menos un
-                dígito, al menos una minúscula y al menos una mayúscula. NO
-                puede tener otros símbolos
-              </p>
-            </div>
-            <div class="container d-flex justify-content-center">
-              <button
-                type="submit"
-                class="btn botonPrincipal botonPrincipalhover botonRegistro"
-              >
-                Regístrate
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </section>
     </main>
     <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/app.js" type="module"></script>
   </body>
 </html>
