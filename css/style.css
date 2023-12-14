@@ -221,7 +221,7 @@ img {
 footer{
   background: #0a0b3d;
 }
-.iconosRedes{
+.iconosRedesFooter{
   color: #7496c1;
   font-size: 30px;
 }
@@ -280,8 +280,9 @@ footer{
   }
     /* footer */
     .logoFooter {
-      font-size: 25px;
+      font-size: 35px;
     }
+
 }
 /* dispositivos medianos */
 @media screen and (min-width: 576px) and (max-width: 820px) {
@@ -311,7 +312,10 @@ footer{
 
   /* footer */
   .logoFooter {
-    font-size: 25px;
+    font-size: 45px;
+  }
+  .iconosRedesFooter{
+    font-size: 35px;
   }
 }
 
