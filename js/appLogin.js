@@ -8,6 +8,7 @@ function contraCorrecta(elMail, contra) {
   }
   return false;
 }
+
 function esAdmin(elMail) {
   for (let index = 0; index < usuarios.length; index++) {
     if (usuarios[index].email === elMail) {
@@ -26,6 +27,23 @@ function marcaRoja(elemento) {
   document.getElementById(elemento).classList.add("is-invalid");
 }
 
+function traerNombre(elMail){
+  for (let index = 0; index < usuarios.length; index++) {
+    if (usuarios[index].email === elMail) {
+      return usuarios[index].nombreApellido;
+    }
+  }
+}
+
+function mensajelogueoCorrecto(elMail){
+  Swal.fire({
+    icon: "success",
+    title: `Hola ${traerNombre(elMail)}`,
+    showConfirmButton: false,
+    timer: 1500
+  });
+}
+
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
 
 const formularioInicioSesion =
@@ -40,10 +58,15 @@ const logeo = (e) => {
     marcaVerde("email");
     marcaVerde("password");
     if (esAdmin(email)) {
-      window.location.href = "../paginaQueCorrespondeAladministrador.html";
-    } else {
-      window.location.href = "../index.html";
+      setTimeout(function() {
+        window.location.href = "../paginaQueCorrespondeAladministrador.html";
+      }, 1500);      
+    } else {  
+      setTimeout(function() {
+        window.location.href = "../index.html";
+      }, 1500);        
     }
+    mensajelogueoCorrecto(email);
   } else {
     marcaRoja("email");
     marcaRoja("password");
