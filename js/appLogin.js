@@ -11,6 +11,15 @@ function contraCorrecta(elMail, contra) {
   return false;
 }
 
+function marcaVerde(elemento) {
+  document.getElementById(elemento).classList.remove("is-invalid");
+  document.getElementById(elemento).classList.add("is-valid");
+}
+
+function marcaRoja(elemento) {
+  document.getElementById(elemento).classList.remove("is-valid");
+  document.getElementById(elemento).classList.add("is-invalid");
+}
 
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
 
@@ -24,12 +33,13 @@ const logeo = (e) =>{
     const contrasena = document.getElementById("password").value.trim();
 
     if (contraCorrecta(email, contrasena) ) {
-      
+      marcaVerde("email");
+      marcaVerde("password");      
     } else {
-      
+      marcaRoja("email");
+      marcaRoja("password");
     }
-    console.log(`el mail: ${email}`);
-    console.log(`la contraseña: ${contrasena}`);
+    
 }
 
 
