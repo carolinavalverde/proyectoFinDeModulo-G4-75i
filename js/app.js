@@ -25,7 +25,6 @@ function rangoDeCaracteres(texto, min, max) {
   }
 }
 
-//esta funcion deberia ser remplazada por una solucion mas estetica
 function mensajeDeError() {
   Swal.fire({
     icon: "error",
@@ -100,13 +99,13 @@ function marcarCampos(
     marcaVerde("confirmarContraseña");
   }
 
-  if (rangoDeCaracteres(nombreApellido, 5, 50)) {
+  if (validarNombreApellido(nombreApellido)) {
     marcaVerde("nombreApellido");
   } else {
     marcaRoja("nombreApellido");
   }
 
-  if (rangoDeCaracteres(usuario, 6, 30) && !usuarioRepetido(usuario)) {
+  if (validarNombreUsuario(usuario) && !usuarioRepetido(usuario)) {
     marcaVerde("nombreUsuario");
   } else {
     marcaRoja("nombreUsuario");
@@ -118,25 +117,25 @@ function marcarCampos(
     marcaRoja("email");
   }
 
-  if (rangoDeCaracteres(tel, 6, 10)) {
+  if (validarTel(tel)) {
     marcaVerde("telefono");
   } else {
     marcaRoja("telefono");
   }
 
-  if (rangoDeCaracteres(domicilio, 6, 30)) {
+  if (validarDomicilio(domicilio)) {
     marcaVerde("domicilio");
   } else {
     marcaRoja("domicilio");
   }
 
-  if (rangoDeCaracteres(localidad, 6, 25)) {
+  if (validarLocalidad(localidad)) {
     marcaVerde("ciudad");
   } else {
     marcaRoja("ciudad");
   }
 
-  if (rangoDeCaracteres(codigoP, 3, 4)) {
+  if (validarCodigoPostal(codigoP)) {
     marcaVerde("codigoPostal");
   } else {
     marcaRoja("codigoPostal");
@@ -162,6 +161,61 @@ function validarContrasena(contrasena) {
   }
 }
 
+function validarNombreApellido(nombreApellido) {
+  const patron = /^[a-zA-Z\s]{5,50}$/;
+  if (patron.test(nombreApellido)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarNombreUsuario(nombUsuario) {
+  const patron = /^[a-zA-Z0-9]{6,30}$/;
+  if (patron.test(nombUsuario)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarTel(tel) {
+  const patron = /^[0-9]{6,15}$/;
+  if (patron.test(tel)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarDomicilio(domicilio) {
+  const patron = /^[a-zA-Z0-9\s\.,'-]{6,30}$/;
+  if (patron.test(domicilio)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarLocalidad(localidad){
+  const patron = /^[a-zA-Z\s]{6,25}$/;
+  if (patron.test(localidad)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarCodigoPostal(cp){
+  const patron = /^[0-9]{3,10}$/;
+  if (patron.test(cp)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
 );
@@ -184,13 +238,14 @@ const crearUsuario = (e) => {
     esIgual(contrasena.value, confirContrasena.value) &&
     validarContrasena(contrasena.value) &&
     !usuarioRepetido(nombreUsuario.value) &&
-    rangoDeCaracteres(nombreApellido.value, 5, 50) &&
-    rangoDeCaracteres(nombreUsuario.value, 6, 30) &&
+    validarNombreApellido(nombreApellido.value) &&
+    validarNombreUsuario(nombreUsuario.value) &&
+    validarMail(email.value) &&
     rangoDeCaracteres(email.value, 5, 100) &&
-    rangoDeCaracteres(telefono.value, 6, 10) &&
-    rangoDeCaracteres(domicilio.value, 6, 30) &&
-    rangoDeCaracteres(localidad.value, 6, 25) &&
-    rangoDeCaracteres(codigoPostal.value, 3, 4) &&
+    validarTel(telefono.value) &&
+    validarDomicilio(domicilio.value) &&
+    validarLocalidad(localidad.value) &&
+    validarCodigoPostal(codigoPostal.value) &&
     rangoDeCaracteres(contrasena.value, 8, 20)
   ) {
     const nuevoUsuario = new Usuario(
