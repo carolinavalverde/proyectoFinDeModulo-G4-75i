@@ -44,6 +44,14 @@ function mensajelogueoCorrecto(elMail){
   });
 }
 
+function mensajelogueoIncorrecto(){
+  Swal.fire({
+    icon: "error",
+    title: `El email o contraseña son incorrectos.`,
+    showConfirmButton: false,
+    timer: 1500
+  });
+}
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
 
 const formularioInicioSesion =
@@ -68,6 +76,7 @@ const logeo = (e) => {
     }
     mensajelogueoCorrecto(email);
   } else {
+    mensajelogueoIncorrecto();
     marcaRoja("email");
     marcaRoja("password");
   }
