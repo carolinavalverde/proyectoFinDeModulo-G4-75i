@@ -34,7 +34,8 @@ const logeo = (e) =>{
 
     if (contraCorrecta(email, contrasena) ) {
       marcaVerde("email");
-      marcaVerde("password");      
+      marcaVerde("password"); 
+      window.location.href = "../index.html";     
     } else {
       marcaRoja("email");
       marcaRoja("password");
