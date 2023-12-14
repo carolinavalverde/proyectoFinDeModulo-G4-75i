@@ -221,21 +221,9 @@ img {
 footer{
   background: #0a0b3d;
 }
-.iconosRedesFooter{
+.iconosRedes{
   color: #7496c1;
   font-size: 30px;
-}
-.logoFooter {
-  font-family: "Titillium Web", sans-serif;
-  text-align: left;
-  font-weight: bold;
-  font-size: 45px;
-  color: #fff;
-  text-shadow: 0 1px 0 #323372, 0 2px 0 #1e2063, 0 3px 0 #0a0b3d, 0 4px 0 #02031f,
-    0 5px 0 #12146e, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 .logoFooter {
   font-family: "Titillium Web", sans-serif;
@@ -294,9 +282,6 @@ footer{
     .logoFooter {
       font-size: 30px;
     }
-    .iconosRedesFooter{
-      font-size: 30px;
-    }
 
 }
 /* dispositivos medianos */
@@ -325,13 +310,10 @@ footer{
     display: none;
   }
 
-  /* footer */
-  .logoFooter {
-    font-size: 45px;
-  }
-  .iconosRedesFooter{
-    font-size: 35px;
-  }
+ /* footer */
+ .logoFooter {
+  font-size: 45px;
+}
 }
 
 /* dispositivos grandes */
