@@ -280,7 +280,10 @@ footer{
   }
     /* footer */
     .logoFooter {
-      font-size: 35px;
+      font-size: 30px;
+    }
+    .iconosRedesFooter{
+      font-size: 30px;
     }
 
 }
