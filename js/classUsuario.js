@@ -8,7 +8,7 @@ export default class Usuario {
   #domicilio;
   #localidad;
   #codigoPostal;
-  #contraseña;
+  #contrasena;
 
   constructor(
     administrador = false,
@@ -19,7 +19,7 @@ export default class Usuario {
     domicilio,
     localidad,
     codigoPostal,
-    contraseña
+    contrasena
   ) {
     this.#id = crypto.randomUUID();
     this.#administrador = administrador;
@@ -30,7 +30,7 @@ export default class Usuario {
     this.#domicilio = domicilio;
     this.#localidad = localidad;
     this.#codigoPostal = codigoPostal;
-    this.#contraseña = contraseña;
+    this.#contrasena = contrasena;
   }
 
   get id() {
@@ -69,8 +69,8 @@ export default class Usuario {
     return this.#codigoPostal;
   }
 
-  get contraseña() {
-    return this.#contraseña;
+  get contrasena() {
+    return this.#contrasena;
   }
 
   set administrador(administrador) {
@@ -105,8 +105,8 @@ export default class Usuario {
     this.#codigoPostal = codigoPostal;
   }
 
-  set contraseña(contraseña) {
-    this.#contraseña = contraseña;
+  set contrasena(contrasena) {
+    this.#contrasena = contrasena;
   }
 
   toJSON() {
@@ -120,7 +120,7 @@ export default class Usuario {
       domicilio: this.domicilio,
       localidad: this.localidad,
       codigoPostal: this.codigoPostal,
-      contraseña: this.contraseña,
+      contrasena: this.contrasena,
     };
   }
 }
