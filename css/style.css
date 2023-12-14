@@ -218,6 +218,14 @@ img {
   font-family: "Roboto", sans-serif;
 }
 
+footer{
+  background: #0a0b3d;
+}
+.iconosRedes{
+  color: #7496c1;
+  font-size: 30px;
+}
+
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
