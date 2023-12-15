@@ -67,12 +67,12 @@ const logeo = (e) => {
     marcaVerde("password");
     if (esAdmin(email)) {
       setTimeout(function() {
-        window.location.href = "../paginaQueCorrespondeAladministrador.html";
-      }, 1500);      
+        window.location.href = "../pages/admin.html";
+      }, 2000);      
     } else {  
       setTimeout(function() {
         window.location.href = "../index.html";
-      }, 1500);        
+      }, 2000);        
     }
     mensajelogueoCorrecto(email);
   } else {

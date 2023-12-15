@@ -263,7 +263,9 @@ const crearUsuario = (e) => {
     borrarFormulario();
     guardarEnLocalStorage();
     alertConfirmaUsuarioNuevo(usuarios[usuarios.length - 1].nombreUsuario);
-    //una vez guardado el usuario de forma correcta me deberia redirigir a la pagina de inicio
+    setTimeout(function() {
+      window.location.href = "../index.html";
+    }, 2000);   
   } else {
     marcarCampos(
       nombreApellido.value,
