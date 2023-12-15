@@ -272,6 +272,11 @@ footer {
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* pagina nosotros */
+.cardBlancoYNegro {
+  filter: grayscale(100%);
+}
+
 /* media queries */
 /* dispositivos pequeños */
 @media screen and (max-width: 575.9px) {
