@@ -9,7 +9,9 @@ const formularioPeliculaNueva = document.getElementsByClassName(
     const nombrePelicula = document.getElementById("inputTitulo");
     const generoPelicula = document.getElementById("inputGenero");
     const descripcionPelicula = document.getElementById("inputDescripcion");
-    console.log(`esto es el nombre de la pelicula ${nombrePelicula}`);
+    console.log(`esto es el nombre de la pelicula ${nombrePelicula.value}`);
+    console.log(`esto es el genero ${generoPelicula.value}`);
+    console.log(`esto es la descripcion ${descripcionPelicula.value}`);
  
   };
   
