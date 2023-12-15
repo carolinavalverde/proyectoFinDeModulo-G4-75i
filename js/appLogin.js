@@ -67,7 +67,7 @@ const logeo = (e) => {
     marcaVerde("password");
     if (esAdmin(email)) {
       setTimeout(function() {
-        window.location.href = "../paginaQueCorrespondeAladministrador.html";
+        window.location.href = "../pages/admin.html";
       }, 1500);      
     } else {  
       setTimeout(function() {
