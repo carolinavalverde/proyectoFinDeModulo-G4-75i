@@ -1,7 +1,8 @@
+import Usuario from "./classPelicula.js";
 const formularioPeliculaNueva = document.getElementsByClassName(
     "formularioModal"
   );
-  //const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
   
   const crearPelicula = (e) => {
     e.preventDefault();
