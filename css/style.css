@@ -219,6 +219,43 @@ img {
   font-family: "Roboto", sans-serif;
 }
 
+/* Página administración */
+
+.editButton{
+  color: rgb(255, 255, 255);
+}
+.editButton:hover{
+  color: rgb(90, 90, 90);
+  transition: 0.3s;
+}
+
+.starButton{
+  color: rgb(170, 170, 0);
+}
+.starButton:hover{
+  color: rgb(255, 255, 0);
+  transition: 0.3s;
+}
+
+.trashButton{
+  color: rgb(255, 0, 0);
+}
+.trashButton:hover{
+  color: rgb(146, 0, 0);
+  transition: 0.3s;
+}
+
+.colorPlaceholder::placeholder { 
+  color: rgb(143, 143, 143); 
+  font-weight: lighter; 
+  font-size: small;
+}
+
+.noResize{
+  resize: none;
+}
+
+=======
 footer{
   background: #0a0b3d;
 }
@@ -279,6 +316,21 @@ footer{
   .categoriaSm {
     font-size: 0.7em;
   }
+
+/* Página Administración */
+
+  .tituloAdminSm{
+    font-size: 1.3rem;
+  }
+
+  .buttonAdminAgregar{
+    font-size: 0.7rem;
+  }
+
+  .table{
+    background-color: transparent;
+  }
+
     /* footer */
     .logoFooter {
       font-size: 30px;
