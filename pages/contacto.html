@@ -152,18 +152,18 @@
       <!-- Contacto form -->
       <section class="container-fluid col-lg-10 my-5">
         <h1 class="text-center py-3">¡Contactese con Nosotros!</h1>
-        <p class="text-center mt-2">
+        <p class="text-center mt-2 textoContacto">
           ¿Tienes Preguntas o Comentarios? ¡Déjanos tu opinión!
         </p>
-        <div class="row mt-5">
+        <div class="row mt-5 textoContacto">
           <div class="col-md-6 col-lg-6">
             <div>
               <ul class="list-group-item">
-                <li class="list-group-item mb-2 iBordo">
-                  <i class="fa-solid fa-phone"></i> 0800-444-NASA
+                <li class="list-group-item mb-2">
+                  <i class="fa-solid fa-phone textoContacto"> 0800-444-NASA</i>
                 </li>
-                <li class="list-group-item mb-2 iBordo">
-                  <i class="fa-solid fa-envelope"></i> universemovies@gmail.com
+                <li class="list-group-item mb-2">
+                  <i class="fa-solid fa-envelope"> universemovies@gmail.com</i>
                 </li>
               </ul>
               <img
@@ -177,9 +177,7 @@
           <div class="col-md-6 col-lg-6">
             <form>
               <div class="mb-3">
-                <label for="nombreContacto" class="form-label iBordo"
-                  >Nombre</label
-                >
+                <label for="nombreContacto" class="form-label">Nombre</label>
                 <input
                   type="text"
                   class="form-control formLogin"
@@ -192,9 +190,7 @@
               </div>
               <div class="row">
                 <div class="mb-3 col-lg-6">
-                  <label for="mailContacto" class="form-label iBordo"
-                    >Email</label
-                  >
+                  <label for="mailContacto" class="form-label">Email</label>
                   <input
                     type="email"
                     class="form-control formLogin"
@@ -206,7 +202,7 @@
                   />
                 </div>
                 <div class="mb-3 col-lg-6">
-                  <label for="telContacto" class="form-label iBordo"
+                  <label for="telContacto" class="form-label"
                     >Telefono (Opcional)</label
                   >
                   <input
@@ -220,7 +216,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label for="telContacto" class="form-label iBordo"
+                <label for="telContacto" class="form-label"
                   >Comentario (Opcional)</label
                 >
                 <textarea
@@ -238,16 +234,18 @@
                   class="form-check-input"
                   id="exampleCheck1"
                 />
-                <label class="form-check-label iBordo" for="checkNoSoyUnRobot"
+                <label class="form-check-label" for="checkNoSoyUnRobot"
                   >No soy un robot 🤖</label
                 >
               </div>
-              <button
-                type="submit"
-                class="btn botonEnviarContactos botonPrincipalhover mb-3"
-              >
-                Enviar
-              </button>
+              <div class="d-flex justify-content-center">
+                <button
+                  type="submit"
+                  class="btn botonEnviarContactos botonPrincipalhover mb-3"
+                >
+                  Enviar
+                </button>
+              </div>
             </form>
           </div>
         </div>
