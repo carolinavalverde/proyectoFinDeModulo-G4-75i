@@ -26,7 +26,7 @@
       <nav class="navbar navbar-expand-lg p-2">
         <div class="container-fluid flex-wrap flex-nowrap">
           <!-- logo -->
-          <a href="../index.html" class="navbar-brand text-light d-flex">
+          <a href="./index.html" class="navbar-brand text-light d-flex">
             <p class="logoNav m-0">Univ3rse Movies</p></a
           >
           <div
@@ -68,33 +68,41 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <a class="dropdown-item text-light" href="../index.html"
+                      <a class="dropdown-item text-light" href="#Acción"
                         >Acción</a
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item text-light" href="../index.html"
+                      <a class="dropdown-item text-light" href="#Animadas"
                         >Animadas</a
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item text-light" href="../index.html"
+                      <a class="dropdown-item text-light" href="#Navideñas"
                         >Navideñas</a
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item text-light" href="../index.html"
+                      <a class="dropdown-item text-light" href="#Románticas"
                         >Románticas</a
                       >
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="#">Contacto</a>
+                  <a class="nav-link text-light" href="../pages/nosotros.html"
+                    >Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="../pages/contacto.html"
+                    >Contacto</a
+                  >
                 </li>
               </ul>
               <form class="d-flex" role="search">
                 <input
+                  id="searchNav"
                   class="form-control me-2"
                   type="search"
                   placeholder="Buscar"
@@ -120,7 +128,7 @@
             <li class="nav-item dropdown d-flex mx-3">
               <a
                 class="nav-link dropdown-toggle text-light"
-                href="./login.html"
+                href="../pages/login.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -129,12 +137,12 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item" href="./login.html"
+                  <a class="dropdown-item" href="../pages/login.html"
                     >Iniciar Sesion</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item active" href="./registro.html"
+                  <a class="dropdown-item active" href="../pages/registro.html"
                     >Registrarse</a
                   >
                 </li>
@@ -145,7 +153,6 @@
       </nav>
     </header>
     <main class="mainFondo">
-      <!-- Registro form -->
       <section class="container">
         <h1 class="tituloPaginaregistro text-center mt-3">CREAR CUENTA</h1>
         <div class="d-flex m-auto col-lg-8 col-md-10 col-sm-10">
@@ -242,7 +249,7 @@
                 id="codigoPostal"
                 placeholder="Ej: 4101"
                 minlength="3"
-                maxlength="4"
+                maxlength="10"
                 required
               />
             </div>
@@ -277,9 +284,9 @@
             </div>
             <div class="form-text mx-4">
               <p class="iBordo">
-                Su contraseña debe tener 8-20 caracteres, contener letras y
-                números, y no debe contener espacios, caracteres especiales o
-                emoji.
+                La contraseña debe tener al entre 8 y 16 caracteres, al menos un
+                dígito, al menos una minúscula y al menos una mayúscula. NO
+                puede tener otros símbolos
               </p>
             </div>
             <div class="container d-flex justify-content-center">
@@ -294,11 +301,47 @@
         </div>
       </section>
     </main>
-    <footer></footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+    <footer class="py-3 h-25">
+      <div class="container-fluid px-4">
+        <div class="row">
+          <div
+            class="col-md-8 col-lg-9 text-lg-start d-flex align-items-lg-center"
+          >
+            <a href="../index.html" class="navbar-brand text-light">
+              <p class="logoFooter ms-2">Univ3rse Movies</p></a
+            >
+          </div>
+          <div class="row col-lg-3 col-md-4">
+            <div class="col-lg-12 text-light text-center p-3">
+              <div class="row d-flex align-content-lg-center">
+                <a href="#" class=" col-sm-12 col-md-6 col-lg-3 pt-3"
+                  ><i class="fa-brands fa-instagram iconosRedes mx-2 my-md-3"></i
+                ></a>
+                <a href="#" class=" col-sm-12 col-md-6 col-lg-3 pt-3"
+                  ><i class="fa-brands fa-facebook iconosRedes mx-2 my-md-3"></i
+                ></a>
+                <a href="#" class=" col-sm-12 col-md-6 col-lg-3 pt-3"
+                  ><i class="fa-brands fa-tiktok iconosRedes mx-2 my-md-3"></i
+                ></a>
+                <a href="#" class=" col-sm-12 col-md-6 col-lg-3 pt-3">
+                  <i class="bi bi-youtube iconosRedes mx-2 m-md-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-12 text-center p-2">
+              <a href="./nosotros.html" class="text-light"
+                >Acerca de Nosotros</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p>Copyright © 2023 Univ3rse Movies</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js" type="module"></script>
   </body>
 </html>
