@@ -1,6 +1,6 @@
 import Usuario from "./classUsuario.js";
 
-function esIgual(textoUno, textoDos) {
+ function esIgual(textoUno, textoDos) {
   if (textoUno === textoDos) {
     return true;
   } else {
@@ -8,7 +8,7 @@ function esIgual(textoUno, textoDos) {
   }
 }
 
-function usuarioRepetido(nomUsuario) {
+ function usuarioRepetido(nomUsuario) {
   for (let index = 0; index < usuarios.length; index++) {
     if (usuarios[index].nombreUsuario === nomUsuario) {
       return true;
@@ -17,13 +17,14 @@ function usuarioRepetido(nomUsuario) {
   return false;
 }
 
-function rangoDeCaracteres(texto, min, max) {
+ function rangoDeCaracteres(texto, min, max) {
   if (texto.length >= min && texto.length <= max) {
     return true;
   } else {
     return false;
   }
 }
+
 
 function mensajeDeError() {
   Swal.fire({
@@ -197,7 +198,7 @@ function validarDomicilio(domicilio) {
   }
 }
 
-function validarLocalidad(localidad){
+function validarLocalidad(localidad) {
   const patron = /^[a-zA-Z\s]{6,25}$/;
   if (patron.test(localidad)) {
     return true;
@@ -206,7 +207,7 @@ function validarLocalidad(localidad){
   }
 }
 
-function validarCodigoPostal(cp){
+function validarCodigoPostal(cp) {
   const patron = /^[0-9]{3,10}$/;
   if (patron.test(cp)) {
     return true;
@@ -214,7 +215,6 @@ function validarCodigoPostal(cp){
     return false;
   }
 }
-
 
 const formularioDeRegistro = document.getElementsByClassName(
   "textoPaginaregistro"
