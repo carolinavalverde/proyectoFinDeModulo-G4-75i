@@ -1,5 +1,13 @@
 h1{
     font-family: "Titillium Web", sans-serif;
+    font-size: 2em;
+    color: #9eadcf;
+}
+
+.textoContacto{
+  color: #9eadcf;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
 }
 
 .botonEnviarContactos {
