@@ -40,9 +40,16 @@ const formularioPeliculaNueva = document.getElementsByClassName(
     e.preventDefault();
   
     const tituloPelicula = document.getElementById("inputTitulo");
-    const generoPelicula = document.getElementById("inputGenero");
+    const numeroGeneroPelicula = document.getElementById("inputGenero");
     const descripcionPelicula = document.getElementById("inputDescripcion");
-  
+    if (true) {
+        const nuevaPelicula = new Pelicula(peliculas.length, tituloPelicula.value, generosPeliculas[numeroGeneroPelicula.value], descripcionPelicula.value);
+        peliculas.push(nuevaPelicula);
+    } else {
+        
+    }
+    
+    console.log(peliculas);
  
   };
   
