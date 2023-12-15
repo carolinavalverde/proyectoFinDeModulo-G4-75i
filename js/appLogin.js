@@ -68,11 +68,11 @@ const logeo = (e) => {
     if (esAdmin(email)) {
       setTimeout(function() {
         window.location.href = "../pages/admin.html";
-      }, 1500);      
+      }, 2000);      
     } else {  
       setTimeout(function() {
         window.location.href = "../index.html";
-      }, 1500);        
+      }, 2000);        
     }
     mensajelogueoCorrecto(email);
   } else {
