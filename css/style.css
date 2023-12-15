@@ -221,10 +221,10 @@ img {
 /* Página administración */
 
 .editButton{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .editButton:hover{
-  color: rgb(90, 90, 90);
+  color: rgb(146, 146, 146);
   transition: 0.3s;
 }
 
@@ -243,6 +243,7 @@ img {
   color: rgb(146, 0, 0);
   transition: 0.3s;
 }
+
 
 /* media queries */
 /* dispositivos pequeños */
