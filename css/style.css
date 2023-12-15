@@ -244,6 +244,16 @@ img {
   transition: 0.3s;
 }
 
+.colorPlaceholder::placeholder { 
+  color: rgb(143, 143, 143); 
+  font-weight: lighter; 
+  font-size: small;
+}
+
+.noResize{
+  resize: none;
+}
+
 
 /* media queries */
 /* dispositivos pequeños */
