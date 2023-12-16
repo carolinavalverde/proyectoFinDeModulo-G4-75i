@@ -307,7 +307,7 @@ footer {
 
   .botonPrincipal {
     padding: 5px;
-    font-size: 0.4em;
+    font-size: 0.6em;
   }
 
   .carouselSm {
@@ -316,6 +316,7 @@ footer {
 
   .categoriaSm {
     font-size: 0.7em;
+    padding-top: 2em;
   }
 
   /* Página Administración */
