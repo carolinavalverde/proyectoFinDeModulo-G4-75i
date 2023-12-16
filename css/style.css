@@ -369,3 +369,8 @@ footer {
     display: none;
   }
 }
+
+/*color del fondo de las nuevas filas en las peliculas desde la vista admin*/
+.nueva-fila {
+  background-color: transparent;
+}

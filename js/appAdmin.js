@@ -1,4 +1,26 @@
 import Pelicula from "./classPelicula.js";
+
+function agregarFilaTabla(pelicula) {
+    const tabla = document.getElementById("tablaDePeliculas").getElementsByTagName('tbody')[0];
+    const nuevaFila = tabla.insertRow();
+ 
+    const celdaCodigo = nuevaFila.insertCell(0);
+    const celdaTitulo = nuevaFila.insertCell(1);
+    const celdaCategoria = nuevaFila.insertCell(2);
+    const celdaDescripcion = nuevaFila.insertCell(3);
+    const celdaPublicada = nuevaFila.insertCell(4);
+    const celdaAcciones = nuevaFila.insertCell(5);
+ 
+    celdaCodigo.innerHTML = pelicula.codigo; 
+    celdaTitulo.innerHTML = pelicula.titulo;
+    celdaCategoria.innerHTML = pelicula.categoria;
+    celdaDescripcion.innerHTML = pelicula.descripcion;
+    celdaPublicada.innerHTML = '<div class="form-check text-center"><input class="form-check-input mx-auto bg-transparent" type="checkbox" value="" id="flexCheckDefault" /></div>';
+    celdaAcciones.innerHTML = '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a><a href=""><i class="fa-solid fa-trash trashButton"></i></a></div>';
+    nuevaFila.classList.add('nueva-fila'); 
+}
+
+
 const formularioPeliculaNueva = document.getElementsByClassName(
     "formularioModal"
   );
@@ -45,6 +67,7 @@ const formularioPeliculaNueva = document.getElementsByClassName(
     if (true) {
         const nuevaPelicula = new Pelicula(peliculas.length, tituloPelicula.value, generosPeliculas[numeroGeneroPelicula.value], descripcionPelicula.value);
         peliculas.push(nuevaPelicula);
+        agregarFilaTabla(nuevaPelicula);
         $('#modalCreatePelicula').modal('hide');
     } else {
         
