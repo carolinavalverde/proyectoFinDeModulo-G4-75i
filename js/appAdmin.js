@@ -1,6 +1,6 @@
 import Pelicula from "./classPelicula.js";
 
-function cargarPeliculasGuardadas(){
+function cargarPeliculasGuardadas() {
   for (let index = 0; index < peliculas.length; index++) {
     agregarFilaTabla(peliculas[index]);
   }
@@ -13,27 +13,43 @@ function agregarFilaTabla(pelicula) {
   const nuevaFila = tabla.insertRow();
 
   const celdaCodigo = nuevaFila.insertCell(0);
-  console.log(`celda codigo: ${celdaCodigo}`);
+
   const celdaTitulo = nuevaFila.insertCell(1);
-  console.log(`celda titulo: ${celdaTitulo}`);
+
   const celdaCategoria = nuevaFila.insertCell(2);
-  console.log(`celda categoria: ${celdaCategoria}`);
+
   const celdaDescripcion = nuevaFila.insertCell(3);
-  console.log(`celda descripcion: ${celdaDescripcion}`);
+
   const celdaPublicada = nuevaFila.insertCell(4);
-  console.log(`celda publicada ${celdaPublicada}`);
+
   const celdaAcciones = nuevaFila.insertCell(5);
-  console.log(`celda acciones ${celdaAcciones}`);
 
   celdaCodigo.innerHTML = pelicula.codigo;
   celdaTitulo.innerHTML = pelicula.titulo;
   celdaCategoria.innerHTML = pelicula.categoria;
   celdaDescripcion.innerHTML = pelicula.descripcion;
+
   celdaPublicada.innerHTML =
-    '<td class="bg-transparent text-white"><div class="form-check text-center"><input class="form-check-input mx-auto bg-transparent" type="checkbox" value="" id="flexCheckDefault" /></div></td>';
+    '<div class="form-check text-center"><input class="form-check-input mx-auto bg-transparent" type="checkbox" value="" id="flexCheckDefault" /></div>';
+  celdaPublicada.classList.add("bg-transparent", "text-white");
+
   celdaAcciones.innerHTML =
-    '<td class="bg-transparent"> <div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a><a href=""><i class="fa-solid fa-trash trashButton"></i></a></div> </tr>';
+    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a><a href=""><i class="fa-solid fa-trash trashButton"></i></a></div>';
+  celdaAcciones.classList.add("bg-transparent", "text-white");
+
   nuevaFila.classList.add("nueva-fila");
+
+  celdaCodigo.innerHTML = pelicula.codigo;
+  celdaCodigo.classList.add("bg-transparent", "text-white");
+
+  celdaTitulo.innerHTML = pelicula.titulo;
+  celdaTitulo.classList.add("bg-transparent", "text-white");
+
+  celdaCategoria.innerHTML = pelicula.categoria;
+  celdaCategoria.classList.add("bg-transparent", "text-white");
+
+  celdaDescripcion.innerHTML = pelicula.descripcion;
+  celdaDescripcion.classList.add("bg-transparent", "text-white");
 }
 
 function guardarEnLocalStorage() {
