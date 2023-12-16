@@ -1,22 +1,28 @@
 import Pelicula from "./classPelicula.js";
 
+function cargarPeliculasGuardadas(){
+  for (let index = 0; index < peliculas.length; index++) {
+    agregarFilaTabla(peliculas[index]);
+  }
+}
+
 function agregarFilaTabla(pelicula) {
-  let tabla = document
+  const tabla = document
     .getElementById("tablaDePeliculas")
     .getElementsByTagName("tbody")[0];
-  let nuevaFila = tabla.insertRow();
+  const nuevaFila = tabla.insertRow();
 
-  let celdaCodigo = nuevaFila.insertCell(0);
+  const celdaCodigo = nuevaFila.insertCell(0);
   console.log(`celda codigo: ${celdaCodigo}`);
-  let celdaTitulo = nuevaFila.insertCell(1);
+  const celdaTitulo = nuevaFila.insertCell(1);
   console.log(`celda titulo: ${celdaTitulo}`);
-  let celdaCategoria = nuevaFila.insertCell(2);
+  const celdaCategoria = nuevaFila.insertCell(2);
   console.log(`celda categoria: ${celdaCategoria}`);
-  let celdaDescripcion = nuevaFila.insertCell(3);
+  const celdaDescripcion = nuevaFila.insertCell(3);
   console.log(`celda descripcion: ${celdaDescripcion}`);
-  let celdaPublicada = nuevaFila.insertCell(4);
+  const celdaPublicada = nuevaFila.insertCell(4);
   console.log(`celda publicada ${celdaPublicada}`);
-  let celdaAcciones = nuevaFila.insertCell(5);
+  const celdaAcciones = nuevaFila.insertCell(5);
   console.log(`celda acciones ${celdaAcciones}`);
 
   celdaCodigo.innerHTML = pelicula.codigo;
@@ -30,9 +36,15 @@ function agregarFilaTabla(pelicula) {
   nuevaFila.classList.add("nueva-fila");
 }
 
+function guardarEnLocalStorage() {
+  localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
+}
+
 const formularioPeliculaNueva =
   document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
+
+window.onload = cargarPeliculasGuardadas();
 const generosPeliculas = [
   "Acción",
   "Aventura",
@@ -81,6 +93,7 @@ const crearPelicula = (e) => {
     );
     peliculas.push(nuevaPelicula);
     agregarFilaTabla(nuevaPelicula);
+    guardarEnLocalStorage();
     $("#modalCreatePelicula").modal("hide");
   } else {
   }
