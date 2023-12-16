@@ -6,6 +6,11 @@ function cargarPeliculasGuardadas() {
   }
 }
 
+function numeroCodigo(numero){
+  let numeroConCeros = String(numero).padStart(6, '0');
+  return numeroConCeros;
+}
+
 function agregarFilaTabla(pelicula) {
   const tabla = document
     .getElementById("tablaDePeliculas")
@@ -102,7 +107,7 @@ const crearPelicula = (e) => {
   const descripcionPelicula = document.getElementById("inputDescripcion");
   if (true) {
     const nuevaPelicula = new Pelicula(
-      peliculas.length,
+      numeroCodigo(peliculas.length),
       tituloPelicula.value,
       generosPeliculas[numeroGeneroPelicula.value],
       descripcionPelicula.value
