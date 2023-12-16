@@ -82,4 +82,6 @@ const logeo = (e) => {
   }
 };
 
+
+
 formularioInicioSesion[0].addEventListener("submit", logeo);
