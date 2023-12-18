@@ -8,4 +8,8 @@ function Usuario() {
   
   const itemNav = document.getElementById('itemNav');
   
-  
+  if (tipoDeUsuario === 'admin') {
+    itemNav.style.display = 'block';
+  } else {
+    itemNav.style.display = 'none';
+  }
