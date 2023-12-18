@@ -34,7 +34,7 @@ function agregarFilaTabla(pelicula) {
   celdaPublicada.classList.add("bg-transparent", "text-white");
 
   celdaAcciones.innerHTML =
-    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a><i class="fa-solid fa-trash trashButton"></i></div>';
+    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a></div>';
   celdaAcciones.classList.add("bg-transparent", "text-white");
 
   const trashButton = document.createElement("i");
@@ -108,7 +108,6 @@ const crearPelicula = (e) => {
     guardarEnLocalStorage();
     $("#modalCreatePelicula").modal("hide");
   } else {
-    
   }
 
   console.log(peliculas);
