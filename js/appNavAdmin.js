@@ -1,4 +1,4 @@
-const nuevoUsuario = true;
+const nuevoUsuario = false;
 
 function Usuario() {
     return nuevoUsuario ? 'admin' : 'user';
