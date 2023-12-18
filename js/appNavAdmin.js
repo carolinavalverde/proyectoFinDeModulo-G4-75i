@@ -1,1 +1,2 @@
+const nuevoUsuario = true;
 
