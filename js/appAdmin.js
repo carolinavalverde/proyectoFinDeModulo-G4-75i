@@ -34,7 +34,7 @@ function agregarFilaTabla(pelicula) {
   celdaPublicada.classList.add("bg-transparent", "text-white");
 
   celdaAcciones.innerHTML =
-    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a><a href=""><i class="fa-solid fa-pen-to-square editButton mx-1"></i></a></div>';
+    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a></div>';
   celdaAcciones.classList.add("bg-transparent", "text-white");
 
   const trashButton = document.createElement("i");
@@ -43,7 +43,14 @@ function agregarFilaTabla(pelicula) {
     eliminarPelicula(pelicula);
   });
 
-  celdaAcciones.appendChild(trashButton);
+  const editButton = document.createElement("i");
+  editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-1");
+  editButton.addEventListener("click", function () {
+    editarPelicula(pelicula);
+  });
+
+  celdaAcciones.appendChild(editButton);
+  celdaAcciones.appendChild(trashButton); 
 
   nuevaFila.classList.add("nueva-fila");
 
@@ -76,6 +83,21 @@ function eliminarPelicula(pelicula) {
     guardarEnLocalStorage();
   }
 }
+
+function cargarDatosEnFormulario(pelicula) {
+  const tituloPelicula = document.getElementById("inputTitulo");
+  const generoPelicula = document.getElementById("inputGenero");
+  const descripcionPelicula = document.getElementById("inputDescripcion");
+
+  tituloPelicula.value = pelicula.titulo;
+  generoPelicula.value = pelicula.categoria;
+  descripcionPelicula.value = pelicula.descripcion;
+}
+
+function editarPelicula(pelicula){
+
+}
+
 
 function guardarEnLocalStorage() {
   localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
