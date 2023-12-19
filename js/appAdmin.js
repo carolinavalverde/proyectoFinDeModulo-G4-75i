@@ -30,7 +30,7 @@ function agregarFilaTabla(pelicula) {
   celdaDescripcion.innerHTML = pelicula.descripcion;
 
   celdaPublicada.innerHTML =
-    '<div class="form-check text-center"><input class="form-check-input mx-auto bg-transparent" type="checkbox" value="" id="flexCheckDefault" /></div>';
+    '<div class="form-check text-center"><input class="form-check-input mx-auto bg-transparent" type="checkbox" value="" /></div>';
   celdaPublicada.classList.add("bg-transparent", "text-white");
 
   celdaAcciones.innerHTML =
@@ -87,11 +87,19 @@ function eliminarPelicula(pelicula) {
   }
 }
 
+let codigoPelicula;
+
+function editarPelicula(pelicula){
+  cargarDatosEnFormulario(pelicula);
+}
+
 function cargarDatosEnFormulario(pelicula) {
   const botonModal = document.getElementById("buttonSubmitModal");
   botonModal.innerHTML = "Actualizar";
-  console.log(botonModal);
-  
+
+  const tituloModal = document.getElementById("modalPeliculaLabel");
+  tituloModal.innerHTML = "Actualizar película"
+
   const tituloPelicula = document.getElementById("inputTitulo");
   const generoPelicula = document.getElementById("inputGenero");
   const descripcionPelicula = document.getElementById("inputDescripcion");
@@ -100,13 +108,44 @@ function cargarDatosEnFormulario(pelicula) {
   generoPelicula.value = pelicula.categoria;
   descripcionPelicula.value = pelicula.descripcion;
 
+  codigoPelicula = pelicula.codigo;
+
 }
 
-function editarPelicula(pelicula){
-  const codigoEditando = pelicula.codigo;
-  console.log(codigoEditando);
-  cargarDatosEnFormulario(pelicula);
-  console.log(pelicula);
+function actualizarPelicula(pelicula){
+ 
+  const tituloPelicula = document.getElementById("inputTitulo");
+  const numeroGeneroPelicula = document.getElementById("inputGenero");
+  const descripcionPelicula = document.getElementById("inputDescripcion");
+
+  peliculas.forEach(pelicula => {
+    if (pelicula.codigo === codigoPelicula) {
+      const peliculaEncontrada = pelicula;
+      peliculaEncontrada.titulo = tituloPelicula.value;
+      peliculaEncontrada.genero = numeroGeneroPelicula.value;
+      peliculaEncontrada.descripcion = descripcionPelicula.value;
+    }
+  });
+
+  guardarEnLocalStorage();
+
+  const tabla = document
+    .getElementById("tablaDePeliculas")
+    .getElementsByTagName("tbody")[0];
+  const filas = tabla.getElementsByClassName("nueva-fila");
+
+  for (let i = 0; i < filas.length; i++) {
+    const codigoFila = filas[i].getElementsByTagName("td")[0].innerHTML;
+      tabla.deleteRow(i);
+  }
+
+  cargarPeliculasGuardadas();
+
+  const botonModal = document.getElementById("buttonSubmitModal");
+  botonModal.innerHTML = "+ Agregar";
+
+  const tituloModal = document.getElementById("modalPeliculaLabel");
+  tituloModal.innerHTML = "Nueva película"
 }
 
 
@@ -145,4 +184,20 @@ const crearPelicula = (e) => {
   console.log(peliculas);
 };
 
-formularioPelicula[0].addEventListener("submit", crearPelicula);
+// formularioPelicula[0].addEventListener("submit", crearPelicula);
+
+formularioPelicula[0].addEventListener("submit", actualizarPelicula(this));
+
+
+
+// const botonModal = document.getElementById("buttonSubmitModal");
+
+// formularioPelicula[0].addEventListener("submit", function (e) {
+//   e.preventDefault(); 
+//   if(botonModal.innerHTML.includes("+ Agregar")){
+//     crearPelicula;
+//   } else if (botonModal.innerHTML.includes("Actualizar")){
+//     actualizarPelicula(this);
+//   }
+//   $("#modalCreatePelicula").modal("hide");
+// });
