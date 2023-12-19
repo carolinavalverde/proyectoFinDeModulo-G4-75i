@@ -88,7 +88,9 @@ function eliminarPelicula(pelicula) {
 }
 
 function cargarDatosEnFormulario(pelicula) {
-  document.getElementById
+  const botonModal = document.getElementById("buttonSubmitModal");
+  botonModal.innerHTML = "Actualizar";
+  console.log(botonModal);
   
   const tituloPelicula = document.getElementById("inputTitulo");
   const generoPelicula = document.getElementById("inputGenero");
@@ -97,10 +99,6 @@ function cargarDatosEnFormulario(pelicula) {
   tituloPelicula.value = pelicula.titulo;
   generoPelicula.value = pelicula.categoria;
   descripcionPelicula.value = pelicula.descripcion;
-
-  console.log(tituloPelicula);
-  console.log(generoPelicula);
-  console.log(descripcionPelicula);
 
 }
 
@@ -116,7 +114,7 @@ function guardarEnLocalStorage() {
   localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
 }
 
-const formularioPeliculaNueva = document.getElementsByClassName("formularioModal");
+const formularioPelicula = document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
@@ -147,4 +145,4 @@ const crearPelicula = (e) => {
   console.log(peliculas);
 };
 
-formularioPeliculaNueva[0].addEventListener("submit", crearPelicula);
+formularioPelicula[0].addEventListener("submit", crearPelicula);
