@@ -45,6 +45,9 @@ function agregarFilaTabla(pelicula) {
 
   const editButton = document.createElement("i");
   editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-1");
+  editButton.setAttribute("data-bs-toggle", "modal");
+  editButton.setAttribute("data-bs-target", "#modalCreatePelicula");
+
   editButton.addEventListener("click", function () {
     editarPelicula(pelicula);
   });
@@ -85,6 +88,8 @@ function eliminarPelicula(pelicula) {
 }
 
 function cargarDatosEnFormulario(pelicula) {
+  document.getElementById
+  
   const tituloPelicula = document.getElementById("inputTitulo");
   const generoPelicula = document.getElementById("inputGenero");
   const descripcionPelicula = document.getElementById("inputDescripcion");
@@ -92,10 +97,18 @@ function cargarDatosEnFormulario(pelicula) {
   tituloPelicula.value = pelicula.titulo;
   generoPelicula.value = pelicula.categoria;
   descripcionPelicula.value = pelicula.descripcion;
+
+  console.log(tituloPelicula);
+  console.log(generoPelicula);
+  console.log(descripcionPelicula);
+
 }
 
 function editarPelicula(pelicula){
-
+  const codigoEditando = pelicula.codigo;
+  console.log(codigoEditando);
+  cargarDatosEnFormulario(pelicula);
+  console.log(pelicula);
 }
 
 
@@ -103,8 +116,7 @@ function guardarEnLocalStorage() {
   localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
 }
 
-const formularioPeliculaNueva =
-  document.getElementsByClassName("formularioModal");
+const formularioPeliculaNueva = document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
