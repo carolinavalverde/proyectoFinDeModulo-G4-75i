@@ -154,6 +154,7 @@
         </div>
         <div class="col-md-5 text-center text-md-end">
           <button
+            id="buttonAgregarPelicula"
             class="btn btn-outline-light mt-2 buttonAdminAgregar"
             type="button"
             class="btn btn-primary"
@@ -257,7 +258,7 @@
         <table class="table" id="tablaDePeliculas">
           <thead>
             <tr>
-              <th scope="col" class="bg-transparent text-white">Cod.</th>
+              <th scope="col" class="bg-transparent text-white">#</th>
               <th scope="col" class="bg-transparent text-white">Título</th>
               <th scope="col" class="bg-transparent text-white">Categoría</th>
               <th scope="col" class="bg-transparent text-white">Descripción</th>
@@ -265,7 +266,7 @@
               <th scope="col" class="bg-transparent text-white">Acciones</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="bodyTablaPeliculas">
             <!--<tr>
               <th scope="row" class="bg-transparent text-white">0000001</th>
               <td class="bg-transparent text-white">Relatos Salvajes</td>
