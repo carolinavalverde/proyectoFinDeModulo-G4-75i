@@ -53,12 +53,12 @@ function mensajelogueoIncorrecto(){
   });
 }
 
-function guardarEnLocalStorage() {
-  localStorage.setItem("estatusUsuarioKey", JSON.stringify(estatusDelUsuarioPresente));
+function guardarEnLocalSessionStorage() {
+  sessionStorage.setItem("estatusUsuarioKey", JSON.stringify(estatusDelUsuarioPresente));
 }
 
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
-let estatusDelUsuarioPresente = JSON.parse(localStorage.getItem("estatusUsuarioKey")) || "nadie";
+let estatusDelUsuarioPresente = JSON.parse(sessionStorage.getItem("estatusUsuarioKey")) || "nadie";
 
 const formularioInicioSesion =
   document.getElementsByClassName("formInicioSesion");
@@ -73,13 +73,13 @@ const logeo = (e) => {
     marcaVerde("password");
     if (esAdmin(email)) {
       estatusDelUsuarioPresente = "Adminitrador";
-      guardarEnLocalStorage();
+      guardarEnLocalSessionStorage();
       setTimeout(function() {
         window.location.href = "../pages/admin.html";
       }, 2000);      
     } else {  
       estatusDelUsuarioPresente = traerNombre(email);
-      guardarEnLocalStorage();
+      guardarEnLocalSessionStorage();
       setTimeout(function() {
         window.location.href = "../index.html";
       }, 2000);        
