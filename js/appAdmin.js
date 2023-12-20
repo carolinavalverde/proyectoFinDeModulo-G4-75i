@@ -40,23 +40,31 @@ function agregarFilaTabla(pelicula,index) {
   celdaPublicada.classList.add("bg-transparent", "text-white");
 
   celdaAcciones.innerHTML =
-    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a></div>';
+    '<div class="w-100"><a href=""></a></div>';
   celdaAcciones.classList.add("bg-transparent", "text-white");
 
+  const highlightButton = document.createElement("i");
+  highlightButton.classList.add("fa-regular", "fa-star", "starButton");
+  highlightButton.addEventListener("click",function (){
+    destacarPelicula(pelicula);
+  });
+
+  
+  const editButton = document.createElement("i");
+  editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-2");
+  editButton.setAttribute("data-bs-toggle", "modal");
+  editButton.setAttribute("data-bs-target", "#modalCreatePelicula");
+  editButton.addEventListener("click", function () {
+    cargarDatosEnFormulario(pelicula);
+  });
+  
   const trashButton = document.createElement("i");
   trashButton.classList.add("fa-solid", "fa-trash", "trashButton");
   trashButton.addEventListener("click", function () {
     eliminarPelicula(pelicula);
   });
 
-  const editButton = document.createElement("i");
-  editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-1");
-  editButton.setAttribute("data-bs-toggle", "modal");
-  editButton.setAttribute("data-bs-target", "#modalCreatePelicula");
-  editButton.addEventListener("click", function () {
-    cargarDatosEnFormulario(pelicula);
-  });
-
+  celdaAcciones.appendChild(highlightButton);
   celdaAcciones.appendChild(editButton);
   celdaAcciones.appendChild(trashButton); 
 
