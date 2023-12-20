@@ -167,6 +167,7 @@ function destacarPelicula(pelicula, highlightButton) {
   guardarEnLocalStorage();
   console.log(pelicula.destacada);
   recargarTabla();
+  destacarPeliculaHTML(pelicula);
 }
 
 function noDestacarPelicula(pelicula, highlightButton) {
@@ -188,6 +189,23 @@ function recargarTabla() {
   peliculas.forEach((pelicula, index) => {
     agregarFilaTabla(pelicula, index);
   });
+}
+
+
+function destacarPeliculaHTML(pelicula) {
+  // const imagenHTML = document.getElementById("imagenDestacadaHTML");
+  // const tituloHTML = document.getElementById("tituloDestacadaHTML");
+  
+  
+  // const tituloHTML = document.querySelector("#tituloDestacadaHTML");
+  // const descripcionHTML = document.getElementById("parrafoDestacadaHTML");
+
+  // imagenHTML.src = pelicula.url;
+  // imagenHTML.alt = pelicula.titulo;
+  // console.log(tituloHTML);
+  // console.log(pelicula.titulo);
+  // tituloHTML.innerText = pelicula.titulo;
+  // descripcionHTML.innerText = pelicula.descripcion;
 }
 
 
