@@ -249,7 +249,7 @@ const crearUsuario = (e) => {
     rangoDeCaracteres(contrasena.value, 8, 20)
   ) {
     const nuevoUsuario = new Usuario(
-      true,
+      false,
       nombreApellido.value.trim().toLowerCase(),
       nombreUsuario.value.trim().toLowerCase(),
       email.value.trim().toLowerCase(),
