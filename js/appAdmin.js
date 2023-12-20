@@ -44,7 +44,11 @@ function agregarFilaTabla(pelicula,index) {
   celdaAcciones.classList.add("bg-transparent", "text-white");
 
   const highlightButton = document.createElement("i");
-  highlightButton.classList.add("fa-regular", "fa-star", "starButton");
+  if(pelicula.destacada === false){
+    highlightButton.classList.add("fa-regular", "fa-star", "starButton");
+  }else if(pelicula.destacada === true){
+    highlightButton.classList.add("fa-solid", "fa-star", "starButton");
+  }
   highlightButton.addEventListener("click",function (){
     if(pelicula.destacada === false){
       destacarPelicula(pelicula, highlightButton);
@@ -155,20 +159,37 @@ const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
 
-function destacarPelicula(pelicula, highlightButton){
+function destacarPelicula(pelicula, highlightButton) {
+  peliculas.forEach((pelicula) => noDestacarPelicula(pelicula, highlightButton));
   highlightButton.classList.remove("fa-regular");
   highlightButton.classList.add("fa-solid");
   pelicula.destacada = true;
+  guardarEnLocalStorage();
   console.log(pelicula.destacada);
+  recargarTabla();
 }
 
-function noDestacarPelicula(pelicula, highlightButton){
-  highlightButton.classList.remove("fa-solid");
-  highlightButton.classList.add("fa-regular");
-  pelicula.destacada = false;
-  console.log(pelicula.destacada);
-
+function noDestacarPelicula(pelicula, highlightButton) {
+  if (pelicula.destacada) {
+    highlightButton.classList.remove("fa-solid");
+    highlightButton.classList.add("fa-regular");
+    pelicula.destacada = false;
+    guardarEnLocalStorage();
+  }
 }
+
+function recargarTabla() {
+  const tabla = document.getElementById("tablaDePeliculas").getElementsByTagName("tbody")[0];
+
+  while (tabla.firstChild) {
+    tabla.removeChild(tabla.firstChild);
+  }
+
+  peliculas.forEach((pelicula, index) => {
+    agregarFilaTabla(pelicula, index);
+  });
+}
+
 
 const crearPelicula = () => {
   const tituloPelicula = document.getElementById("inputTitulo");
