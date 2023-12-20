@@ -136,6 +136,7 @@ function guardarEnLocalStorage() {
 }
 
 const formularioPelicula = document.getElementsByClassName("formularioModal");
+
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
@@ -166,7 +167,6 @@ const crearPelicula = () => {
   
 };
 
-
 formularioPelicula[0].addEventListener("submit", prepararFormulario);
 
 function prepararFormulario(e){
@@ -178,4 +178,5 @@ function prepararFormulario(e){
     actualizarPelicula();
   }
 }
+
 
