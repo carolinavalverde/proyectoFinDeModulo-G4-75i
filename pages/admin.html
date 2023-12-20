@@ -223,6 +223,27 @@
                       <option value="4">Románticas</option>
                     </select>
                   </div>
+                  <div class="mb-3 col-md-6">
+                    <label for="inputTitulo" class="form-label">Código (readonly):</label>
+                    <input
+                      type="text"
+                      class="form-control text-bg-dark colorPlaceholder"
+                      id="inputCodigo"
+                      placeholder="UUID"
+                      readonly
+                    />
+                  </div>
+                  <div class="mb-3 col-md-6">
+                    <label for="inputTitulo" class="form-label">Imagen:</label>
+                    <input
+                      type="url"
+                      class="form-control text-bg-dark colorPlaceholder"
+                      id="inputImagen"
+                      placeholder="URL de imagen .png o .jpg"
+                      minlength="2"
+                      maxlength="200"
+                    />
+                  </div>
                   <div class="mb-3">
                     <label for="inputDescripcion" class="form-label"
                       >Descripción:</label
