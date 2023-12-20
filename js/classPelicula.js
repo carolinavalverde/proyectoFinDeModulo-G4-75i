@@ -7,14 +7,13 @@ export default class Pelicula {
     #destacada;
   
     constructor(
-      codigo,
       titulo,
       categoria,
       descripcion,
       publicada = false,
       destacada = false
     ) {
-      this.#codigo = codigo;
+      this.#codigo = uuidv4();
       this.#titulo = titulo;
       this.#categoria = categoria;
       this.#descripcion = descripcion;

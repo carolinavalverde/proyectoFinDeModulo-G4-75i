@@ -157,6 +157,7 @@
         </div>
         <div class="col-md-5 text-center text-md-end">
           <button
+            id="buttonAgregarPelicula"
             class="btn btn-outline-light mt-2 buttonAdminAgregar"
             type="button"
             class="btn btn-primary"
@@ -173,7 +174,7 @@
         class="modal fade modal-lg mt-4"
         id="modalCreatePelicula"
         tabindex="-1"
-        aria-labelledby="modalCreatePeliculaLabel"
+        aria-labelledby="modalPeliculaLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog">
@@ -181,7 +182,7 @@
             <div class="modal-header bg-dark border-0">
               <h1
                 class="modal-title fs-3 text-white"
-                id="modalCreatePeliculaLabel"
+                id="modalPeliculaLabel"
               >
                 Nueva película
               </h1>
@@ -245,7 +246,7 @@
                     >
                       Cancelar
                     </button>
-                    <button type="submit" class="btn btn-light mx-2">
+                    <button id="buttonSubmitModal" type="submit" class="btn btn-light mx-2">
                       + Agregar
                     </button>
                   </div>
@@ -260,7 +261,7 @@
         <table class="table" id="tablaDePeliculas">
           <thead>
             <tr>
-              <th scope="col" class="bg-transparent text-white">Cod.</th>
+              <th scope="col" class="bg-transparent text-white">#</th>
               <th scope="col" class="bg-transparent text-white">Título</th>
               <th scope="col" class="bg-transparent text-white">Categoría</th>
               <th scope="col" class="bg-transparent text-white">Descripción</th>
@@ -268,7 +269,7 @@
               <th scope="col" class="bg-transparent text-white">Acciones</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="bodyTablaPeliculas">
             <!--<tr>
               <th scope="row" class="bg-transparent text-white">0000001</th>
               <td class="bg-transparent text-white">Relatos Salvajes</td>
@@ -350,6 +351,7 @@
     ></script>
     <script src="../js/appAdmin.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/appBotonUsuario.js" ></script>
+    <!-- Generador de id -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
   </body>
 </html>
