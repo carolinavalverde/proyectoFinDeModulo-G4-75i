@@ -1,4 +1,5 @@
 import Pelicula from "./classPelicula.js";
+import Usuario from "./classUsuario.js";
 
 function cargarPeliculasGuardadas() {
   peliculas.map((pelicula,indice) => agregarFilaTabla(pelicula,indice));
@@ -116,8 +117,13 @@ function cargarDatosEnFormulario(pelicula) {
   const descripcionPelicula = document.getElementById("inputDescripcion");
   const uuidPelicula = document.getElementById("inputCodigo");
 
+  if(pelicula.categoria === "Acción"){
+    generoPelicula.value = pelicula.categoria;
+  }
+
+
   tituloPelicula.value = pelicula.titulo;
-  generoPelicula.value = pelicula.categoria;
+  
   descripcionPelicula.value = pelicula.descripcion;
   uuidPelicula.value = pelicula.codigo;
 
@@ -191,7 +197,6 @@ function recargarTabla() {
   });
 }
 
-
 function destacarPeliculaHTML(pelicula) {
   // const imagenHTML = document.getElementById("imagenDestacadaHTML");
   // const tituloHTML = document.getElementById("tituloDestacadaHTML");
@@ -220,7 +225,9 @@ const crearPelicula = () => {
     tituloPelicula.value,
     generoPelicula,
     descripcionPelicula.value,
-    imagenPelicula.value,
+    false,
+    false,
+    imagenPelicula.value
   );
 
   peliculas.push(nuevaPelicula);
@@ -247,5 +254,3 @@ function prepararFormulario(e){
     actualizarPelicula();
   }
 }
-
-

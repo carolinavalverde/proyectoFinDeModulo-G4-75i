@@ -1,3 +1,5 @@
+import Usuario from "./classUsuario.js";
+
 function contraCorrecta(elMail, contra) {
   for (let index = 0; index < usuarios.length; index++) {
     if (usuarios[index].email === elMail) {
@@ -93,4 +95,12 @@ const logeo = (e) => {
   }
 };
 
-formularioInicioSesion[0].addEventListener("submit", logeo);
+formularioInicioSesion[0].addEventListener("submit", exeLogin);
+
+function exeLogin(e){
+  const usuarioAdmin = new Usuario(true, "Pepe admin", "pepeadmin", "pepeadmin@gmail.com", 3816817512, "Solano vera 1982", "Yerba Buena", 4107,"12345678aA");
+  usuarios.push(usuarioAdmin);
+  e.preventDefault();
+  logeo();
+}
+ 
