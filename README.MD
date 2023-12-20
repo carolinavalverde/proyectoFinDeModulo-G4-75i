@@ -19,6 +19,7 @@ https://univ3rsemovies.netlify.app/
 
 * Bootstrap v5.3.2: https://getbootstrap.com/
 * SweetAlert v2: https://sweetalert2.github.io/
+* uuidv4 v6.2.13: https://www.npmjs.com/package/uuidv4
 
 ## 4. Autores:
 
