@@ -17,7 +17,6 @@ buttonNuevaPelicula.addEventListener("click", () => {
   tituloModal.innerHTML = "Nueva película"
 });
 
-
 function agregarFilaTabla(pelicula,index) {
   const tabla = document
     .getElementById("tablaDePeliculas")
@@ -75,24 +74,18 @@ function eliminarPelicula(pelicula) {
   if (indice !== -1) {
     peliculas.splice(indice, 1);
 
-    const tabla = document
-      .getElementById("tablaDePeliculas")
-      .getElementsByTagName("tbody")[0];
-    const filas = tabla.getElementsByClassName("nueva-fila");
-
-    for (let i = 0; i < filas.length; i++) {
-      const codigoFila = filas[i].getElementsByTagName("td")[0].innerHTML;
-
-      if (codigoFila === pelicula.codigo) {
-        tabla.deleteRow(i);
-        break;
-      }
-    }
-
     guardarEnLocalStorage();
 
+    const tabla = document.getElementById("tablaDePeliculas").getElementsByTagName("tbody")[0];
+
+    while (tabla.firstChild) {
+      tabla.removeChild(tabla.firstChild);
+    }
+
+    cargarPeliculasGuardadas();
   }
 }
+
 
 function cargarDatosEnFormulario(pelicula) {
   peliculaNueva = false;
@@ -123,8 +116,6 @@ function actualizarPelicula(){
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
 
-  console.log(posicion);
-  console.log(peliculas[posicion]);
   peliculas[posicion].titulo = tituloPelicula.value;
   peliculas[posicion].genero = generoPelicula;
   peliculas[posicion].descripcion = descripcionPelicula.value;
@@ -136,12 +127,9 @@ function actualizarPelicula(){
   tbody.children[posicion].children[2].innerHTML = generoPelicula;
   tbody.children[posicion].children[3].innerHTML = descripcionPelicula.value;
 
-
   codigoPelicula = null;
   peliculaNueva = true;
 }
-
-
 
 function guardarEnLocalStorage() {
   localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
@@ -151,8 +139,6 @@ const formularioPelicula = document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
-
-// const generosPeliculas = ["Acción", "Animadas", "Navideñas", "Románticas"];
 
 
 const crearPelicula = () => {
