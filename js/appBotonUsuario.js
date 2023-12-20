@@ -3,7 +3,6 @@ const estatusDelUsuarioPresente =
 
 let elementos = document.getElementsByClassName("nav-link");
 let urlActual = window.location.href.slice(-10);
-console.log(urlActual);
 if(estatusDelUsuarioPresente !== "nadie"){
     for (let i = 0; i < elementos.length; i++) {
         if (elementos[i].textContent === "Administrador") {
@@ -17,4 +16,4 @@ if(estatusDelUsuarioPresente !== "nadie"){
 }
 
 
-console.log(estatusDelUsuarioPresente);
+

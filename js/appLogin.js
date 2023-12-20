@@ -62,7 +62,7 @@ let estatusDelUsuarioPresente = JSON.parse(sessionStorage.getItem("estatusUsuari
 
 const formularioInicioSesion =
   document.getElementsByClassName("formInicioSesion");
-console.log();
+
 const logeo = (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value.trim();
