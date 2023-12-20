@@ -150,12 +150,13 @@ const crearPelicula = () => {
   const numeroGeneroPelicula = document.getElementById("inputGenero");
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
-  
+  const imagenPelicula = document.getElementById("inputImagen");
 
   const nuevaPelicula = new Pelicula(
     tituloPelicula.value,
     generoPelicula,
-    descripcionPelicula.value
+    descripcionPelicula.value,
+    imagenPelicula.value,
   );
 
   peliculas.push(nuevaPelicula);
