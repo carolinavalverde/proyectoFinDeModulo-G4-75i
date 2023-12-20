@@ -81,6 +81,8 @@ function guardarEnLocalStorage() {
   localStorage.setItem("peliculasKey", JSON.stringify(peliculas));
 }
 
+const estatusDelUsuarioPresente = JSON.parse(localStorage.getItem("estatusUsuarioKey")) || "nadie";
+
 const formularioPeliculaNueva =
   document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
@@ -114,3 +116,4 @@ const crearPelicula = (e) => {
 };
 
 formularioPeliculaNueva[0].addEventListener("submit", crearPelicula);
+console.log(estatusDelUsuarioPresente);

@@ -52,11 +52,17 @@ function mensajelogueoIncorrecto(){
     timer: 1500
   });
 }
+
+function guardarEnLocalStorage() {
+  localStorage.setItem("estatusUsuarioKey", JSON.stringify(estatusDelUsuarioPresente));
+}
+
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [];
+let estatusDelUsuarioPresente = JSON.parse(localStorage.getItem("estatusUsuarioKey")) || "nadie";
 
 const formularioInicioSesion =
   document.getElementsByClassName("formInicioSesion");
-
+console.log();
 const logeo = (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value.trim();
@@ -66,14 +72,19 @@ const logeo = (e) => {
     marcaVerde("email");
     marcaVerde("password");
     if (esAdmin(email)) {
+      estatusDelUsuarioPresente = "Adminitrador";
+      guardarEnLocalStorage();
       setTimeout(function() {
         window.location.href = "../pages/admin.html";
       }, 2000);      
     } else {  
+      estatusDelUsuarioPresente = traerNombre(email);
+      guardarEnLocalStorage();
       setTimeout(function() {
         window.location.href = "../index.html";
       }, 2000);        
     }
+
     mensajelogueoCorrecto(email);
   } else {
     mensajelogueoIncorrecto();
@@ -83,5 +94,5 @@ const logeo = (e) => {
 };
 
 
-
+console.log(estatusDelUsuarioPresente);
 formularioInicioSesion[0].addEventListener("submit", logeo);
