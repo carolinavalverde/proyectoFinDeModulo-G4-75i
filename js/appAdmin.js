@@ -157,8 +157,12 @@ const crearPelicula = () => {
   console.log(peliculas);
   agregarFilaTabla(nuevaPelicula,peliculas.length-1);
   guardarEnLocalStorage();
-  $("#modalCreatePelicula").modal("hide");
 
+  tituloPelicula.value = "";
+  numeroGeneroPelicula.selectedIndex = 0;
+  descripcionPelicula.value = "";
+
+  $("#modalCreatePelicula").modal("hide");
   
 };
 
