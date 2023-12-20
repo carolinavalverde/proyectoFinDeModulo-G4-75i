@@ -116,17 +116,23 @@ function cargarDatosEnFormulario(pelicula) {
   const generoPelicula = document.getElementById("inputGenero");
   const descripcionPelicula = document.getElementById("inputDescripcion");
   const uuidPelicula = document.getElementById("inputCodigo");
+  const imagenPelicula = document.getElementById("inputImagen");
 
   if(pelicula.categoria === "Acción"){
-    generoPelicula.value = pelicula.categoria;
+    generoPelicula.value = 1;
+  } else if(pelicula.categoria === "Animadas"){
+    generoPelicula.value = 2;
+  } else if(pelicula.categoria === "Navideñas"){
+    generoPelicula.value = 3;
+  } else if(pelicula.categoria === "Románticas"){
+    generoPelicula.value = 4;
   }
-
 
   tituloPelicula.value = pelicula.titulo;
   
   descripcionPelicula.value = pelicula.descripcion;
   uuidPelicula.value = pelicula.codigo;
-
+  imagenPelicula.value = pelicula.url;
 
   codigoPelicula = pelicula.codigo;
 
@@ -139,10 +145,12 @@ function actualizarPelicula(){
   const numeroGeneroPelicula = document.getElementById("inputGenero");
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  const imagenPelicula = document.getElementById("inputImagen");
 
   peliculas[posicion].titulo = tituloPelicula.value;
   peliculas[posicion].genero = generoPelicula;
   peliculas[posicion].descripcion = descripcionPelicula.value;
+  peliculas[posicion].url = imagenPelicula.value;
   guardarEnLocalStorage();
   $("#modalCreatePelicula").modal("hide");
 
