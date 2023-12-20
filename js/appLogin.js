@@ -1,3 +1,5 @@
+import Usuario from "./classUsuario.js";
+
 function contraCorrecta(elMail, contra) {
   for (let index = 0; index < usuarios.length; index++) {
     if (usuarios[index].email === elMail) {

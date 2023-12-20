@@ -1,4 +1,5 @@
 import Pelicula from "./classPelicula.js";
+import Usuario from "./classUsuario.js";
 
 function cargarPeliculasGuardadas() {
   peliculas.map((pelicula,indice) => agregarFilaTabla(pelicula,indice));
@@ -40,23 +41,38 @@ function agregarFilaTabla(pelicula,index) {
   celdaPublicada.classList.add("bg-transparent", "text-white");
 
   celdaAcciones.innerHTML =
-    '<div class="w-100"><a href=""><i class="fa-regular fa-star starButton"></i></a></div>';
+    '<div class="w-100"><a href=""></a></div>';
   celdaAcciones.classList.add("bg-transparent", "text-white");
 
+  const highlightButton = document.createElement("i");
+  if(pelicula.destacada === false){
+    highlightButton.classList.add("fa-regular", "fa-star", "starButton");
+  }else if(pelicula.destacada === true){
+    highlightButton.classList.add("fa-solid", "fa-star", "starButton");
+  }
+  highlightButton.addEventListener("click",function (){
+    if(pelicula.destacada === false){
+      destacarPelicula(pelicula, highlightButton);
+    }else if(pelicula.destacada === true){
+      noDestacarPelicula(pelicula, highlightButton);
+    }
+  });
+  
+  const editButton = document.createElement("i");
+  editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-2");
+  editButton.setAttribute("data-bs-toggle", "modal");
+  editButton.setAttribute("data-bs-target", "#modalCreatePelicula");
+  editButton.addEventListener("click", function () {
+    cargarDatosEnFormulario(pelicula);
+  });
+  
   const trashButton = document.createElement("i");
   trashButton.classList.add("fa-solid", "fa-trash", "trashButton");
   trashButton.addEventListener("click", function () {
     eliminarPelicula(pelicula);
   });
 
-  const editButton = document.createElement("i");
-  editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-1");
-  editButton.setAttribute("data-bs-toggle", "modal");
-  editButton.setAttribute("data-bs-target", "#modalCreatePelicula");
-  editButton.addEventListener("click", function () {
-    cargarDatosEnFormulario(pelicula);
-  });
-
+  celdaAcciones.appendChild(highlightButton);
   celdaAcciones.appendChild(editButton);
   celdaAcciones.appendChild(trashButton); 
 
@@ -99,10 +115,24 @@ function cargarDatosEnFormulario(pelicula) {
   const tituloPelicula = document.getElementById("inputTitulo");
   const generoPelicula = document.getElementById("inputGenero");
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  const uuidPelicula = document.getElementById("inputCodigo");
+  const imagenPelicula = document.getElementById("inputImagen");
+
+  if(pelicula.categoria === "Acción"){
+    generoPelicula.value = 1;
+  } else if(pelicula.categoria === "Animadas"){
+    generoPelicula.value = 2;
+  } else if(pelicula.categoria === "Navideñas"){
+    generoPelicula.value = 3;
+  } else if(pelicula.categoria === "Románticas"){
+    generoPelicula.value = 4;
+  }
 
   tituloPelicula.value = pelicula.titulo;
-  generoPelicula.value = pelicula.categoria;
+  
   descripcionPelicula.value = pelicula.descripcion;
+  uuidPelicula.value = pelicula.codigo;
+  imagenPelicula.value = pelicula.url;
 
   codigoPelicula = pelicula.codigo;
 
@@ -115,10 +145,12 @@ function actualizarPelicula(){
   const numeroGeneroPelicula = document.getElementById("inputGenero");
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  const imagenPelicula = document.getElementById("inputImagen");
 
   peliculas[posicion].titulo = tituloPelicula.value;
   peliculas[posicion].genero = generoPelicula;
   peliculas[posicion].descripcion = descripcionPelicula.value;
+  peliculas[posicion].url = imagenPelicula.value;
   guardarEnLocalStorage();
   $("#modalCreatePelicula").modal("hide");
 
@@ -141,17 +173,69 @@ const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
 
+function destacarPelicula(pelicula, highlightButton) {
+  peliculas.forEach((pelicula) => noDestacarPelicula(pelicula, highlightButton));
+  highlightButton.classList.remove("fa-regular");
+  highlightButton.classList.add("fa-solid");
+  pelicula.destacada = true;
+  guardarEnLocalStorage();
+  console.log(pelicula.destacada);
+  recargarTabla();
+  destacarPeliculaHTML(pelicula);
+}
+
+function noDestacarPelicula(pelicula, highlightButton) {
+  if (pelicula.destacada) {
+    highlightButton.classList.remove("fa-solid");
+    highlightButton.classList.add("fa-regular");
+    pelicula.destacada = false;
+    guardarEnLocalStorage();
+  }
+}
+
+function recargarTabla() {
+  const tabla = document.getElementById("tablaDePeliculas").getElementsByTagName("tbody")[0];
+
+  while (tabla.firstChild) {
+    tabla.removeChild(tabla.firstChild);
+  }
+
+  peliculas.forEach((pelicula, index) => {
+    agregarFilaTabla(pelicula, index);
+  });
+}
+
+function destacarPeliculaHTML(pelicula) {
+  // const imagenHTML = document.getElementById("imagenDestacadaHTML");
+  // const tituloHTML = document.getElementById("tituloDestacadaHTML");
+  
+  
+  // const tituloHTML = document.querySelector("#tituloDestacadaHTML");
+  // const descripcionHTML = document.getElementById("parrafoDestacadaHTML");
+
+  // imagenHTML.src = pelicula.url;
+  // imagenHTML.alt = pelicula.titulo;
+  // console.log(tituloHTML);
+  // console.log(pelicula.titulo);
+  // tituloHTML.innerText = pelicula.titulo;
+  // descripcionHTML.innerText = pelicula.descripcion;
+}
+
 
 const crearPelicula = () => {
   const tituloPelicula = document.getElementById("inputTitulo");
   const numeroGeneroPelicula = document.getElementById("inputGenero");
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  const imagenPelicula = document.getElementById("inputImagen");
 
   const nuevaPelicula = new Pelicula(
     tituloPelicula.value,
     generoPelicula,
-    descripcionPelicula.value
+    descripcionPelicula.value,
+    false,
+    false,
+    imagenPelicula.value
   );
 
   peliculas.push(nuevaPelicula);
@@ -178,5 +262,3 @@ function prepararFormulario(e){
     actualizarPelicula();
   }
 }
-
-

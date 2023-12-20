@@ -5,13 +5,15 @@ export default class Pelicula {
     #descripcion;
     #publicada;
     #destacada;
+    #url
   
     constructor(
       titulo,
       categoria,
       descripcion,
       publicada = false,
-      destacada = false
+      destacada = false,
+      url
     ) {
       this.#codigo = uuidv4();
       this.#titulo = titulo;
@@ -19,6 +21,7 @@ export default class Pelicula {
       this.#descripcion = descripcion;
       this.#publicada = publicada;
       this.#destacada = destacada;
+      this.#url = url;
     }
   
     get codigo() {
@@ -44,6 +47,10 @@ export default class Pelicula {
     get destacada() {
       return this.#destacada;
     }
+
+    get url() {
+      return this.#url;
+    }
   
     set codigo(codigo) {
       this.#codigo = codigo;
@@ -68,6 +75,10 @@ export default class Pelicula {
     set destacada(destacada) {
       this.#destacada = destacada;
     }
+
+    set url(url) {
+      this.#url = url;
+    }
   
     toJSON() {
       return {
@@ -77,6 +88,7 @@ export default class Pelicula {
         descripcion: this.descripcion,
         publicada: this.publicada,
         destacada: this.destacada,
+        url: this.url,
       };
     }
   }
