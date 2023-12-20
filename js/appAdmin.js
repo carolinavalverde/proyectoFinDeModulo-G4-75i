@@ -140,6 +140,7 @@ function actualizarPelicula(pelicula){
   }
 
   cargarPeliculasGuardadas();
+  codigoPelicula = null;
 
   const botonModal = document.getElementById("buttonSubmitModal");
   botonModal.innerHTML = "+ Agregar";
@@ -158,6 +159,7 @@ const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
 const generosPeliculas = ["Acción", "Animadas", "Navideñas", "Románticas"];
+
 
 const crearPelicula = (e) => {
   e.preventDefault();
@@ -184,13 +186,35 @@ const crearPelicula = (e) => {
   console.log(peliculas);
 };
 
-// formularioPelicula[0].addEventListener("submit", crearPelicula);
 
+// const submitModalAction = (e) =>{
+
+//   e.preventDefault();
+//   if(botonModal.innerHTML.includes("+ Agregar")){
+//     crearPelicula;
+//   } else if (botonModal.innerHTML.includes("Actualizar")){
+//     actualizarPelicula(this);
+//   }
+//   $("#modalCreatePelicula").modal("hide");
+// }
+
+// const botonModal = document.getElementById("buttonSubmitModal").value;
+
+// formularioPelicula[0].addEventListener("submit", crearPelicula);
 formularioPelicula[0].addEventListener("submit", actualizarPelicula(this));
 
 
+// function chooseFunction(){
+//   if(botonModal.includes("+ Agregar")){
+//     crearPelicula;
+//   } else if (botonModal.includes("Actualizar")){
+//     actualizarPelicula(this);
+//   }
+//   $("#modalCreatePelicula").modal("hide");
+// }
 
-// const botonModal = document.getElementById("buttonSubmitModal");
+
+
 
 // formularioPelicula[0].addEventListener("submit", function (e) {
 //   e.preventDefault(); 
