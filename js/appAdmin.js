@@ -90,10 +90,9 @@ function eliminarPelicula(pelicula) {
     }
 
     guardarEnLocalStorage();
-    
+
   }
 }
-
 
 function cargarDatosEnFormulario(pelicula) {
   peliculaNueva = false;
@@ -121,20 +120,20 @@ function actualizarPelicula(){
   
   const tituloPelicula = document.getElementById("inputTitulo");
   const numeroGeneroPelicula = document.getElementById("inputGenero");
+  const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
-
 
   console.log(posicion);
   console.log(peliculas[posicion]);
   peliculas[posicion].titulo = tituloPelicula.value;
-  peliculas[posicion].genero = numeroGeneroPelicula.value;
+  peliculas[posicion].genero = generoPelicula;
   peliculas[posicion].descripcion = descripcionPelicula.value;
   guardarEnLocalStorage();
   $("#modalCreatePelicula").modal("hide");
 
   const tbody = document.getElementById("bodyTablaPeliculas");
   tbody.children[posicion].children[1].innerHTML = tituloPelicula.value;
-  tbody.children[posicion].children[2].innerHTML = numeroGeneroPelicula.value;
+  tbody.children[posicion].children[2].innerHTML = generoPelicula;
   tbody.children[posicion].children[3].innerHTML = descripcionPelicula.value;
 
 
@@ -152,28 +151,29 @@ const formularioPelicula = document.getElementsByClassName("formularioModal");
 const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
-const generosPeliculas = ["Acción", "Animadas", "Navideñas", "Románticas"];
+
+// const generosPeliculas = ["Acción", "Animadas", "Navideñas", "Románticas"];
 
 
 const crearPelicula = () => {
   const tituloPelicula = document.getElementById("inputTitulo");
-  const generoPelicula = document.getElementById("inputGenero");
+  const numeroGeneroPelicula = document.getElementById("inputGenero");
+  const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
 
   const nuevaPelicula = new Pelicula(
     tituloPelicula.value,
-    generosPeliculas[numeroGeneroPelicula.value],
+    generoPelicula,
     descripcionPelicula.value
   );
 
   peliculas.push(nuevaPelicula);
-  
+  console.log(peliculas);
   agregarFilaTabla(nuevaPelicula,peliculas.length-1);
   guardarEnLocalStorage();
   $("#modalCreatePelicula").modal("hide");
 
-
-  console.log(peliculas);
+  
 };
 
 
