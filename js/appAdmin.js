@@ -99,10 +99,13 @@ function cargarDatosEnFormulario(pelicula) {
   const tituloPelicula = document.getElementById("inputTitulo");
   const generoPelicula = document.getElementById("inputGenero");
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  const uuidPelicula = document.getElementById("inputCodigo");
 
   tituloPelicula.value = pelicula.titulo;
   generoPelicula.value = pelicula.categoria;
   descripcionPelicula.value = pelicula.descripcion;
+  uuidPelicula.value = pelicula.codigo;
+
 
   codigoPelicula = pelicula.codigo;
 
@@ -147,6 +150,7 @@ const crearPelicula = () => {
   const numeroGeneroPelicula = document.getElementById("inputGenero");
   const generoPelicula = numeroGeneroPelicula.options[numeroGeneroPelicula.selectedIndex].text;
   const descripcionPelicula = document.getElementById("inputDescripcion");
+  
 
   const nuevaPelicula = new Pelicula(
     tituloPelicula.value,
