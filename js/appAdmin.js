@@ -46,9 +46,12 @@ function agregarFilaTabla(pelicula,index) {
   const highlightButton = document.createElement("i");
   highlightButton.classList.add("fa-regular", "fa-star", "starButton");
   highlightButton.addEventListener("click",function (){
-    destacarPelicula(pelicula);
+    if(pelicula.destacada === false){
+      destacarPelicula(pelicula, highlightButton);
+    }else if(pelicula.destacada === true){
+      noDestacarPelicula(pelicula, highlightButton);
+    }
   });
-
   
   const editButton = document.createElement("i");
   editButton.classList.add("fa-solid", "fa-pen-to-square", "editButton", "mx-2");
@@ -152,6 +155,20 @@ const peliculas = JSON.parse(localStorage.getItem("peliculasKey")) || [];
 
 window.onload = cargarPeliculasGuardadas();
 
+function destacarPelicula(pelicula, highlightButton){
+  highlightButton.classList.remove("fa-regular");
+  highlightButton.classList.add("fa-solid");
+  pelicula.destacada = true;
+  console.log(pelicula.destacada);
+}
+
+function noDestacarPelicula(pelicula, highlightButton){
+  highlightButton.classList.remove("fa-solid");
+  highlightButton.classList.add("fa-regular");
+  pelicula.destacada = false;
+  console.log(pelicula.destacada);
+
+}
 
 const crearPelicula = () => {
   const tituloPelicula = document.getElementById("inputTitulo");
