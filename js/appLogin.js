@@ -95,12 +95,4 @@ const logeo = (e) => {
   }
 };
 
-formularioInicioSesion[0].addEventListener("submit", exeLogin);
-
-function exeLogin(e){
-  const usuarioAdmin = new Usuario(true, "Pepe admin", "pepeadmin", "pepeadmin@gmail.com", 3816817512, "Solano vera 1982", "Yerba Buena", 4107,"12345678aA");
-  usuarios.push(usuarioAdmin);
-  e.preventDefault();
-  logeo();
-}
- 
+formularioInicioSesion[0].addEventListener("submit", logeo);
