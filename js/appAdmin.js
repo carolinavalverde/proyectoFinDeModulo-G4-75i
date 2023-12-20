@@ -6,10 +6,10 @@ function cargarPeliculasGuardadas() {
   }
 }
 
-function numeroCodigo(numero) {
-  let numeroConCeros = String(numero).padStart(6, "0");
-  return numeroConCeros;
-}
+// function numeroCodigo(numero) {
+//   let numeroConCeros = String(numero).padStart(6, "0");
+//   return numeroConCeros;
+// }
 
 function agregarFilaTabla(pelicula) {
   const tabla = document
@@ -170,7 +170,6 @@ const crearPelicula = (e) => {
 
   if (true) {
     const nuevaPelicula = new Pelicula(
-      numeroCodigo(peliculas.length),
       tituloPelicula.value,
       generosPeliculas[numeroGeneroPelicula.value],
       descripcionPelicula.value
@@ -200,8 +199,8 @@ const crearPelicula = (e) => {
 
 // const botonModal = document.getElementById("buttonSubmitModal").value;
 
-// formularioPelicula[0].addEventListener("submit", crearPelicula);
-formularioPelicula[0].addEventListener("submit", actualizarPelicula(this));
+formularioPelicula[0].addEventListener("submit", crearPelicula);
+// formularioPelicula[0].addEventListener("submit", actualizarPelicula(this));
 
 
 // function chooseFunction(){
