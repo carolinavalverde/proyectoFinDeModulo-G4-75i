@@ -93,6 +93,4 @@ const logeo = (e) => {
   }
 };
 
-
-console.log(estatusDelUsuarioPresente);
 formularioInicioSesion[0].addEventListener("submit", logeo);
