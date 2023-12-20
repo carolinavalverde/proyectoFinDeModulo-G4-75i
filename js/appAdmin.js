@@ -1,13 +1,11 @@
 import Pelicula from "./classPelicula.js";
 
 function cargarPeliculasGuardadas() {
-  // for (let index = 0; index < peliculas.length; index++) {
-  //   agregarFilaTabla(peliculas[index],index);
-  // }
   peliculas.map((pelicula,indice) => agregarFilaTabla(pelicula,indice));
 }
 
 let peliculaNueva = true;
+let codigoPelicula;
 
 const buttonNuevaPelicula = document.getElementById("buttonAgregarPelicula");
 buttonNuevaPelicula.addEventListener("click", () => {
@@ -95,8 +93,6 @@ function eliminarPelicula(pelicula) {
     
   }
 }
-
-let codigoPelicula;
 
 
 function cargarDatosEnFormulario(pelicula) {
